@@ -31,6 +31,33 @@ cd frontend && npm install && npm run dev
 
 Open http://localhost:5173. API docs: http://localhost:5000/scalar
 
+## Running with Docker
+
+Needs Docker Desktop (on Windows it requires WSL 2: run `wsl --install` as administrator and restart).
+
+```bash
+cp .env.example .env        # then fill in Speech__Knowlez__Key
+docker compose up --build
+```
+
+- Website: http://localhost:8080 (`FRONTEND_PORT`)
+- Backend API and docs: http://localhost:5000/scalar (`BACKEND_PORT`, docs only in Development)
+
+| Service | Image | Notes |
+|---|---|---|
+| `frontend` | node build + nginx | serves the site and proxies `/api` to the backend |
+| `backend` | .NET 10 | reaches the APIs by service name (`api-1-vlibras`, `api-2-speech`) |
+| `api-1-vlibras` | .NET 10 | |
+| `api-2-speech` | .NET 10 | audio cache in the `speech-cache` volume. Windows voices are not available in Linux containers, so it uses Knowlez (or Azure) |
+
+Homologation / production (backend port closed, `ASPNETCORE_ENVIRONMENT=Production`, always restart):
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+```
+
+Useful commands: `docker compose logs -f backend`, `docker compose down` (add `-v` to also delete the audio cache - it will spend the Knowlez trial requests again).
+
 ### Configuration (.env)
 
 All settings live in a single `.env` file in the repo root, read by the three .NET projects and by Vite.
@@ -73,6 +100,8 @@ Flow: `feature/*` -> `dev` -> `homologa` -> `prod`, and `prod` -> `master`.
 | GET | `/api/probes/{id}/hardware` | real hardware of the probe |
 | GET | `/api/missions` | missions |
 | GET | `/api/missions/environments` | Moon / Mars conditions |
+| GET | `/api/learn` | teaching content (precedents, methodology, robotics) |
+| GET | `/api/learn/robotics-cases` | probes with a classroom robotics application |
 | GET | `/api/hardware`, `/api/hardware/by-category` | game parts |
 | POST | `/api/simulation` | run the game |
 | GET | `/api/simulation/{probeId}/original` | run with the real hardware |
@@ -94,10 +123,14 @@ dust storms, radiation, wear and communication. Values are simplified for teachi
 
 ## Data
 
-- `backend/Data/probes.json` - probes from our research document (sources: NASA / NSSDCA)
+- `backend/Data/probes.moon.json`, `probes.mars.json`, `probes.deep-space.json` - 27 artifacts from our research
+  document (NASA / NSSDCA). Each one links to its NSSDCA catalog entry.
 - `backend/Data/components.json` - parts for the game
+- `backend/Data/learn.json` - teaching content
+- `frontend/public/images/probes/` - images (WebP). 3D renders made by the team; photos from the NASA Image
+  Library (public domain, credited in `imageCredit`).
 
-Still missing: source links, images and image descriptions.
+Only probes with a `scenario` (landers, rovers, the helicopter and the ALSEP stations) appear in the simulator.
 
 ## Accessibility notes
 
