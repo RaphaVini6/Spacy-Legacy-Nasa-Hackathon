@@ -1,0 +1,424 @@
+[
+  {
+    "id": "viking-lander-1",
+    "name": {
+      "en": "Viking Lander 1"
+    },
+    "equipment": {
+      "en": "Viking Lander 1 (Thomas Mutch Memorial Station)"
+    },
+    "mission": {
+      "en": "Viking 1"
+    },
+    "destination": "Mars",
+    "type": "Lander",
+    "launch": "1975-08-20",
+    "date": "1976-07-20",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Communication ended on November 11, 1982."
+    },
+    "location": {
+      "en": "Western slopes of Chryse Planitia"
+    },
+    "latitude": 22.483,
+    "longitude": -47.94,
+    "function": {
+      "en": "Soil analysis with GCMS and XRF, color photographs and daily weather."
+    },
+    "mechanicalReuse": {
+      "en": "The robotic remote sampler arm can be removed and used as a mechanical gripper or crane on a new rover; the aluminum/titanium chassis can be cut to reinforce habitats."
+    },
+    "keyComponents": {
+      "en": "Robotic remote sampler arm driven by stepper motors and joints, plus an aluminum and titanium chassis."
+    },
+    "source": {
+      "name": "NASA Science - Viking 1",
+      "nssdcaId": "1975-075C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/viking-lander-1.webp",
+    "imageCredit": "NASA/JPL (PIA09703)"
+  },
+  {
+    "id": "viking-1-orbiter",
+    "name": {
+      "en": "Viking 1 Orbiter"
+    },
+    "equipment": {
+      "en": "Viking 1 Orbiter"
+    },
+    "mission": {
+      "en": "Viking 1"
+    },
+    "destination": "Mars",
+    "type": "Orbiter",
+    "launch": "1975-08-20",
+    "date": "1976-06-19",
+    "dateKind": "OrbitInsertion",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Switched off on August 7, 1980, after running out of propellant."
+    },
+    "location": {
+      "en": "Mars orbit"
+    },
+    "function": {
+      "en": "Photographic mapping of 97% of the Martian surface, plus thermal and water vapor mapping."
+    },
+    "mechanicalReuse": {
+      "en": "Serves as a permanent inert satellite for calibrating orbital models and tracking gravitational perturbations."
+    },
+    "source": {
+      "name": "NASA Science - Viking 1",
+      "nssdcaId": "1975-075A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/viking-1-orbiter.webp",
+    "gallery": [
+      "/images/probes/diagram-viking-orbiter.webp"
+    ]
+  },
+  {
+    "id": "mars-pathfinder",
+    "name": {
+      "en": "Mars Pathfinder Lander"
+    },
+    "equipment": {
+      "en": "Mars Pathfinder Lander (Carl Sagan Memorial Station)"
+    },
+    "mission": {
+      "en": "Mars Pathfinder"
+    },
+    "destination": "Mars",
+    "type": "Lander",
+    "launch": "1996-12-04",
+    "date": "1997-07-04",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Transmissions ended on September 27, 1997."
+    },
+    "location": {
+      "en": "Ares Vallis"
+    },
+    "function": {
+      "en": "Airbag landing, support station for Sojourner and atmospheric/weather monitoring."
+    },
+    "mechanicalReuse": {
+      "en": "The folding metal exit ramps can be reused by new rovers as bridges over rocky cracks."
+    },
+    "source": {
+      "name": "NASA Science - Mars Pathfinder",
+      "nssdcaId": "1996-068A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/mars-pathfinder.webp",
+    "imageCredit": "NASA/JPL (PIA01550)"
+  },
+  {
+    "id": "sojourner",
+    "name": {
+      "en": "Sojourner Rover"
+    },
+    "equipment": {
+      "en": "Sojourner Rover"
+    },
+    "mission": {
+      "en": "Mars Pathfinder"
+    },
+    "destination": "Mars",
+    "type": "Rover",
+    "launch": "1996-12-04",
+    "date": "1997-07-04",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Ended on September 27, 1997."
+    },
+    "location": {
+      "en": "Ares Vallis"
+    },
+    "function": {
+      "en": "Elemental analysis of rocks with the APXS and demonstration of robotic mobility."
+    },
+    "mechanicalReuse": {
+      "en": "The ultralight rover frame (10.6 kg) can be towed and reshaped into an auxiliary cargo cart attached to bigger robots."
+    },
+    "source": {
+      "name": "NASA Science - Mars Pathfinder",
+      "nssdcaId": "1996-068A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/sojourner.webp",
+    "imageCredit": "NASA/JPL (PIA01551)"
+  },
+  {
+    "id": "pathfinder-airbags",
+    "name": {
+      "en": "Pathfinder Airbags and Parachute"
+    },
+    "equipment": {
+      "en": "Pathfinder Deceleration Airbags and Parachute"
+    },
+    "mission": {
+      "en": "Mars Pathfinder"
+    },
+    "destination": "Mars",
+    "type": "Debris",
+    "launch": "1996-12-04",
+    "date": "1997-07-04",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Discarded on the surface."
+    },
+    "location": {
+      "en": "Ares Vallis (bounce path about 1 km from the landing site)"
+    },
+    "function": {
+      "en": "Cushion the atmospheric entry impact over 15 successive bounces."
+    },
+    "mechanicalReuse": {
+      "en": "The high-strength woven synthetic fabric of the airbags can be cut into sealing blankets or dust barriers."
+    },
+    "source": {
+      "name": "NASA Science - Mars Pathfinder",
+      "nssdcaId": "1996-068A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/pathfinder-airbags.webp",
+    "imageCredit": "NASA/JPL (PIA00612)"
+  },
+  {
+    "id": "spirit",
+    "name": {
+      "en": "Spirit Rover"
+    },
+    "equipment": {
+      "en": "Spirit Rover (MER-A, Columbia Memorial Station)"
+    },
+    "mission": {
+      "en": "Mars Exploration Rovers (MER)"
+    },
+    "destination": "Mars",
+    "type": "Rover",
+    "launch": "2003",
+    "date": "2004-01-03",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Ended in 2010 after driving 7.7 km."
+    },
+    "location": {
+      "en": "Gusev Crater"
+    },
+    "function": {
+      "en": "Confirm the presence of ancient water in the rock record of Gusev Crater."
+    },
+    "mechanicalReuse": {
+      "en": "The stepper motors of the independent wheels and the titanium joints of the arm can be cannibalized into small repair cranes."
+    },
+    "source": {
+      "name": "NASA Science - Mars Exploration Rovers",
+      "nssdcaId": "2003-027A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/spirit.webp",
+    "imageCredit": "NASA/JPL (PIA04239)"
+  },
+  {
+    "id": "opportunity",
+    "name": {
+      "en": "Opportunity Rover"
+    },
+    "equipment": {
+      "en": "Opportunity Rover (MER-B)"
+    },
+    "mission": {
+      "en": "Mars Exploration Rovers (MER)"
+    },
+    "destination": "Mars",
+    "type": "Rover",
+    "launch": "2003",
+    "date": "2004-01-24",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Ended on June 10, 2018, after a dust storm; it drove 45.16 km."
+    },
+    "location": {
+      "en": "Meridiani Planum (Eagle and Endurance craters)"
+    },
+    "function": {
+      "en": "Study the history of water and hydrated mineral deposits in Meridiani Planum."
+    },
+    "mechanicalReuse": {
+      "en": "The reinforced gears of the rocker-bogie suspension and the panoramic camera joints can be refurbished into small automated mechanisms."
+    },
+    "source": {
+      "name": "NASA Science - Mars Exploration Rovers",
+      "nssdcaId": "2003-032A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/opportunity.webp",
+    "imageCredit": "NASA/JPL (PIA04240)"
+  },
+  {
+    "id": "insight",
+    "name": {
+      "en": "InSight Lander"
+    },
+    "equipment": {
+      "en": "InSight Lander (Interior Exploration using Seismic Investigations, Geodesy and Heat Transport)"
+    },
+    "mission": {
+      "en": "Mars InSight Lander"
+    },
+    "destination": "Mars",
+    "type": "Lander",
+    "launch": "2018-05-05",
+    "date": "2018-11-26",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Ended on December 15, 2022."
+    },
+    "location": {
+      "en": "Elysium Planitia"
+    },
+    "latitude": 4.5,
+    "longitude": 135.9,
+    "function": {
+      "en": "Map the internal structure of the heterogeneous Martian mantle through seismology and measure wind and pressure."
+    },
+    "mechanicalReuse": {
+      "en": "Engineering reuse: it was built on the Mars Phoenix platform. On the ground, its 1.8-meter robotic arm can be detached and adapted as an actuator in fixed stations."
+    },
+    "keyComponents": {
+      "en": "Articulated robotic arm more than 1.8 meters (5 feet 9 inches) long."
+    },
+    "source": {
+      "name": "NASA Science - InSight Lander",
+      "nssdcaId": "2018-042A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/insight.webp",
+    "imageCredit": "NASA/JPL-Caltech (PIA19811)"
+  },
+  {
+    "id": "perseverance",
+    "name": {
+      "en": "Perseverance Rover"
+    },
+    "equipment": {
+      "en": "Perseverance Rover"
+    },
+    "mission": {
+      "en": "Mars 2020"
+    },
+    "destination": "Mars",
+    "type": "Rover",
+    "launch": "2020-07-30",
+    "date": "2021-02-18",
+    "dateKind": "Landing",
+    "status": "Active",
+    "statusDetail": {
+      "en": "In operation."
+    },
+    "location": {
+      "en": "Jezero Crater"
+    },
+    "function": {
+      "en": "Investigate geology, search for signs of ancient microbial life and seal samples for return to Earth."
+    },
+    "mechanicalReuse": {
+      "en": "(Future plan) At the end of its operational life, the high-durability drill and the internal sample carousel could be cannibalized into a fixed soil drilling and mining unit."
+    },
+    "source": {
+      "name": "NASA Science - Mars 2020 Perseverance",
+      "nssdcaId": "2020-052A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/perseverance.webp",
+    "imageCredit": "NASA/JPL-Caltech (PIA23962)"
+  },
+  {
+    "id": "ingenuity",
+    "name": {
+      "en": "Ingenuity Helicopter"
+    },
+    "equipment": {
+      "en": "Ingenuity Mars Helicopter"
+    },
+    "mission": {
+      "en": "Mars 2020 / Ingenuity Technology Demonstration"
+    },
+    "destination": "Mars",
+    "type": "Helicopter",
+    "launch": "2020-07-30",
+    "date": "2021-04-19",
+    "dateKind": "FirstFlight",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Completed on January 25, 2024, after 72 flights."
+    },
+    "location": {
+      "en": "Jezero Crater"
+    },
+    "function": {
+      "en": "First powered, controlled flight on another planet and aerial scout for Perseverance."
+    },
+    "mechanicalReuse": {
+      "en": "Design reuse: it was the basis for the SkyFall project. On the ground, its four carbon fiber blades and ultralight motors can be reused in habitat fans."
+    },
+    "keyComponents": {
+      "en": "Four carbon fiber rotor blades and high-speed electric micro-motors."
+    },
+    "source": {
+      "name": "NASA Science - Ingenuity Mars Helicopter",
+      "nssdcaId": "2020-052A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/ingenuity.webp",
+    "imageCredit": "NASA/JPL-Caltech (PIA24466)"
+  },
+  {
+    "id": "perseverance-landing-debris",
+    "name": {
+      "en": "Perseverance Landing-Gear Debris"
+    },
+    "equipment": {
+      "en": "Perseverance Descent Equipment Debris (Landing-Gear Debris)"
+    },
+    "mission": {
+      "en": "Mars 2020"
+    },
+    "destination": "Mars",
+    "type": "Debris",
+    "launch": "2020-07-30",
+    "date": "2021-02-18",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Discarded on the ground."
+    },
+    "location": {
+      "en": "Jezero Crater"
+    },
+    "function": {
+      "en": "Aerial photo mapping by the Ingenuity helicopter to assess the condition of the structure discarded after landing."
+    },
+    "mechanicalReuse": {
+      "en": "Metal and polymer fragments can be collected for thermal degradation analysis or recycled as structural filler."
+    },
+    "source": {
+      "name": "NASA Science - Ingenuity Mars Helicopter",
+      "nssdcaId": "2020-052A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/perseverance-landing-debris.webp",
+    "imageCredit": "NASA/JPL-Caltech (PIA25217)"
+  }
+]

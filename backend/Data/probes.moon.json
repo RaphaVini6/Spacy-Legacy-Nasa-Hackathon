@@ -1,0 +1,516 @@
+[
+  {
+    "id": "apollo-11-eagle",
+    "name": {
+      "en": "Lunar Module Eagle - Descent Stage"
+    },
+    "equipment": {
+      "en": "Lunar Module Eagle (LM-5) Descent Stage"
+    },
+    "mission": {
+      "en": "Apollo 11"
+    },
+    "destination": "Moon",
+    "type": "Lander",
+    "launch": "1969-07-16",
+    "date": "1969-07-20",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Remains on the lunar surface."
+    },
+    "location": {
+      "en": "Mare Tranquillitatis (Sea of Tranquility)"
+    },
+    "latitude": 0.67416,
+    "longitude": 23.47314,
+    "function": {
+      "en": "Landing of the first crewed mission on the Moon, surface operations platform and launch pad for the ascent stage."
+    },
+    "mechanicalReuse": {
+      "en": "The 4.2 m wide octagonal aluminum structure and the four landing legs with circular footpads can be deactivated and cut robotically to serve as anchors against moonquakes and support beams for new habitats."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-059C"
+    },
+    "reliability": "Confirmed",
+    "reliabilityNote": {
+      "en": "Mapped by the Lunar Reconnaissance Orbiter"
+    },
+    "imageUrl": "/images/probes/apollo-11-lunar-module.webp",
+    "gallery": [
+      "/images/probes/lm-descent-stage.webp",
+      "/images/probes/diagram-lunar-module.webp"
+    ]
+  },
+  {
+    "id": "apollo-11-eagle-ascent",
+    "name": {
+      "en": "Lunar Module Eagle - Ascent Stage"
+    },
+    "equipment": {
+      "en": "Lunar Module Eagle (LM-5) Ascent Stage"
+    },
+    "mission": {
+      "en": "Apollo 11"
+    },
+    "destination": "Moon",
+    "type": "AscentStage",
+    "launch": "1969-07-16",
+    "date": "1969-07-22",
+    "dateKind": "Discarded",
+    "status": "Lost",
+    "statusDetail": {
+      "en": "Impacted the lunar surface 1 to 4 months after being discarded."
+    },
+    "location": {
+      "en": "Lunar surface (exact coordinates not mapped)"
+    },
+    "function": {
+      "en": "Carry the crew and lift off from the lunar surface to dock with the Command Module."
+    },
+    "mechanicalReuse": {
+      "en": "If the impact debris is found by robots, the metal alloys of the ascent engine and of the Aerozine 50 fuel tanks can be recycled as raw material for casting."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-059C"
+    },
+    "reliability": "Estimated",
+    "imageUrl": "/images/probes/lm-ascent-stage.webp"
+  },
+  {
+    "id": "apollo-11-plaque",
+    "name": {
+      "en": "Apollo 11 Ladder Plaque and Memorial Items"
+    },
+    "equipment": {
+      "en": "Commemorative Ladder Plaque and Memorial Items Package"
+    },
+    "mission": {
+      "en": "Apollo 11"
+    },
+    "destination": "Moon",
+    "type": "Memorial",
+    "launch": "1969-07-16",
+    "date": "1969-07-20",
+    "dateKind": "Deployment",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Remains on the lunar surface."
+    },
+    "location": {
+      "en": "Mare Tranquillitatis (fixed on the ladder strut and on the ground)"
+    },
+    "latitude": 0.67416,
+    "longitude": 23.47314,
+    "function": {
+      "en": "Record humanity's historic message of peace and preserve historical memory."
+    },
+    "mechanicalReuse": {
+      "en": "Preserved as a cultural time capsule and as a passive geodetic marker for optical calibration of new rovers' cameras."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-059C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-11-plaque.webp"
+  },
+  {
+    "id": "apollo-11-easep",
+    "name": {
+      "en": "EASEP and Laser Retroreflector (LRRR)"
+    },
+    "equipment": {
+      "en": "Early Apollo Scientific Experiment Package (EASEP) and Laser Ranging Retroreflector (LRRR)"
+    },
+    "mission": {
+      "en": "Apollo 11"
+    },
+    "destination": "Moon",
+    "type": "ScientificPackage",
+    "launch": "1969-07-16",
+    "date": "1969-07-21",
+    "dateKind": "Deployment",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "EASEP shut down on August 27, 1969; the LRRR is still in passive use."
+    },
+    "location": {
+      "en": "17 m from the Lunar Module; LRRR 5 m to the NNW"
+    },
+    "latitude": 0.6735,
+    "longitude": 23.473,
+    "function": {
+      "en": "Measure passive seismic activity, dust buildup and the Earth-Moon distance by laser."
+    },
+    "mechanicalReuse": {
+      "en": "The LRRR is still used, with no power, to measure the lunar orbit; the EASEP solar panels and connectors can be cannibalized as mechanical supports."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-059C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-11-easep.webp",
+    "imageCredit": "NASA (AS11-40-5951)"
+  },
+  {
+    "id": "apollo-12-intrepid",
+    "name": {
+      "en": "Lunar Module Intrepid - Descent Stage"
+    },
+    "equipment": {
+      "en": "Lunar Module Intrepid (LM-6) Descent Stage"
+    },
+    "mission": {
+      "en": "Apollo 12"
+    },
+    "destination": "Moon",
+    "type": "Lander",
+    "launch": "1969-11-14",
+    "date": "1969-11-19",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Remains on the lunar surface."
+    },
+    "location": {
+      "en": "Oceanus Procellarum (Ocean of Storms)"
+    },
+    "latitude": -3.0128,
+    "longitude": -23.4219,
+    "function": {
+      "en": "Precision crewed landing 180 meters from the Surveyor 3 lander."
+    },
+    "mechanicalReuse": {
+      "en": "Thermal blanket panels and the light aluminum alloy of the octagonal chassis can be cut and bent robotically to serve as reflectors or mechanical shields."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-099C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/lm-descent-stage-intrepid.webp",
+    "gallery": [
+      "/images/probes/diagram-intrepid-lm6.webp"
+    ]
+  },
+  {
+    "id": "apollo-12-intrepid-ascent",
+    "name": {
+      "en": "Lunar Module Intrepid - Ascent Stage"
+    },
+    "equipment": {
+      "en": "Lunar Module Intrepid (LM-6) Ascent Stage"
+    },
+    "mission": {
+      "en": "Apollo 12"
+    },
+    "destination": "Moon",
+    "type": "AscentStage",
+    "launch": "1969-11-14",
+    "date": "1969-11-20",
+    "dateKind": "Impact",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Intentionally crashed into the lunar surface."
+    },
+    "location": {
+      "en": "About 60 km from the ALSEP"
+    },
+    "latitude": -3.94,
+    "longitude": -21.2,
+    "function": {
+      "en": "Return the crew to the Command Module and make a controlled impact that produced the first recorded artificial moonquake."
+    },
+    "mechanicalReuse": {
+      "en": "Metal fragments from the impact site can be collected by mining rovers and reused in in-situ metallurgy."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-099C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/lm-ascent-stage.webp"
+  },
+  {
+    "id": "apollo-12-alsep",
+    "name": {
+      "en": "Apollo 12 ALSEP and SNAP-27 RTG"
+    },
+    "equipment": {
+      "en": "Apollo Lunar Surface Experiments Package (ALSEP) and SNAP-27 RTG"
+    },
+    "mission": {
+      "en": "Apollo 12"
+    },
+    "destination": "Moon",
+    "type": "ScientificPackage",
+    "launch": "1969-11-14",
+    "date": "1969-11-19",
+    "dateKind": "Deployment",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Shut down on September 30, 1977."
+    },
+    "location": {
+      "en": "Oceanus Procellarum"
+    },
+    "latitude": -3.0094,
+    "longitude": -23.4246,
+    "function": {
+      "en": "Geophysical monitoring of moonquakes, ions, dust, magnetic field and solar wind, powered by plutonium-238."
+    },
+    "mechanicalReuse": {
+      "en": "The SNAP-27 RTG capsule still produces heat through radioactive decay and could be moved by a robot to act as a passive heater, keeping the batteries of new systems warm during the lunar night."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1969-099C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-alsep.webp",
+    "imageCredit": "NASA (AS12-47-6919)"
+  },
+  {
+    "id": "surveyor-3",
+    "name": {
+      "en": "Surveyor 3 Lander"
+    },
+    "equipment": {
+      "en": "Surveyor 3 Lander (Surveyor-C)"
+    },
+    "mission": {
+      "en": "Surveyor Program (Surveyor 3)"
+    },
+    "destination": "Moon",
+    "type": "Lander",
+    "launch": "1967-04-17",
+    "date": "1967-04-20",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Ended on May 4, 1967; parts recovered by Apollo 12."
+    },
+    "location": {
+      "en": "Southeastern Oceanus Procellarum"
+    },
+    "latitude": -3,
+    "longitude": -23.41,
+    "function": {
+      "en": "Soft landing, imaging and digging with a mechanical scoop to test whether the soil could hold the Lunar Module."
+    },
+    "mechanicalReuse": {
+      "en": "Historical precedent: astronauts removed the scoop and the camera in 1969. The remaining light-alloy tubular frame can serve as a support truss for antennas."
+    },
+    "source": {
+      "name": "NASA Science - Surveyor 3",
+      "nssdcaId": "1967-035A"
+    },
+    "reliability": "Confirmed",
+    "reliabilityNote": {
+      "en": "Visited and inspected on foot by the Apollo 12 crew"
+    },
+    "imageUrl": "/images/probes/surveyor-3.webp"
+  },
+  {
+    "id": "apollo-15-falcon",
+    "name": {
+      "en": "Lunar Module Falcon - Descent Stage"
+    },
+    "equipment": {
+      "en": "Lunar Module Falcon (LM-10) Descent Stage"
+    },
+    "mission": {
+      "en": "Apollo 15"
+    },
+    "destination": "Moon",
+    "type": "Lander",
+    "launch": "1971-07-26",
+    "date": "1971-07-30",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Remains on the lunar surface."
+    },
+    "location": {
+      "en": "Mare Imbrium / Apennine Mountains"
+    },
+    "latitude": 26.13239,
+    "longitude": 3.6333,
+    "function": {
+      "en": "Extended crewed landing and transport of the LRV and the ALSEP suite."
+    },
+    "mechanicalReuse": {
+      "en": "The emptied titanium-alloy fuel tanks can be disconnected and reshaped into pressurized storage tanks on the ground."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1971-063C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-15-lunar-module.webp",
+    "gallery": [
+      "/images/probes/lm-descent-stage.webp"
+    ]
+  },
+  {
+    "id": "apollo-15-falcon-ascent",
+    "name": {
+      "en": "Lunar Module Falcon - Ascent Stage"
+    },
+    "equipment": {
+      "en": "Lunar Module Falcon (LM-10) Ascent Stage"
+    },
+    "mission": {
+      "en": "Apollo 15"
+    },
+    "destination": "Moon",
+    "type": "AscentStage",
+    "launch": "1971-07-26",
+    "date": "1971-08-03",
+    "dateKind": "Impact",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Intentionally crashed into the lunar surface."
+    },
+    "location": {
+      "en": "Lunar surface"
+    },
+    "latitude": 26.36,
+    "longitude": 0.25,
+    "function": {
+      "en": "Return the crew to the Command Module and crash into the ground to calibrate the seismic network."
+    },
+    "mechanicalReuse": {
+      "en": "Metal alloy debris can be collected by robots and cast into spare parts."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1971-063C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/lm-ascent-stage.webp"
+  },
+  {
+    "id": "apollo-15-alsep",
+    "name": {
+      "en": "Apollo 15 ALSEP and SNAP-27 RTG"
+    },
+    "equipment": {
+      "en": "Apollo Lunar Surface Experiments Package (ALSEP) and SNAP-27 RTG"
+    },
+    "mission": {
+      "en": "Apollo 15"
+    },
+    "destination": "Moon",
+    "type": "ScientificPackage",
+    "launch": "1971-07-26",
+    "date": "1971-07-31",
+    "dateKind": "Deployment",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Shut down on September 30, 1977."
+    },
+    "location": {
+      "en": "Mare Imbrium / Apennine Mountains"
+    },
+    "latitude": 26.1341,
+    "longitude": 3.6298,
+    "function": {
+      "en": "Continuous measurement of internal heat flow, seismology and solar wind, powered by an RTG."
+    },
+    "mechanicalReuse": {
+      "en": "The continuous waste heat of the SNAP-27 radioisotope source can be used as a passive heater for equipment during lunar nights."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1971-063C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-alsep.webp",
+    "imageCredit": "NASA (AS12-47-6919)"
+  },
+  {
+    "id": "apollo-15-lrv",
+    "name": {
+      "en": "Lunar Roving Vehicle (Rover 15)"
+    },
+    "equipment": {
+      "en": "Lunar Roving Vehicle (LRV / Rover 15)"
+    },
+    "mission": {
+      "en": "Apollo 15"
+    },
+    "destination": "Moon",
+    "type": "Rover",
+    "launch": "1971-07-26",
+    "date": "1971-07-30",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Remains on the lunar surface."
+    },
+    "location": {
+      "en": "Mare Imbrium (foot of the Apennine Mountains)"
+    },
+    "latitude": 26.13239,
+    "longitude": 3.6333,
+    "function": {
+      "en": "First powered vehicle on the Moon, covering 27.9 km."
+    },
+    "mechanicalReuse": {
+      "en": "The steel/titanium mesh wheels, the folding aluminum chassis and the four electric wheel motors can be taken apart by robots to build an autonomous cargo trailer."
+    },
+    "keyComponents": {
+      "en": "Folding aluminum chassis, steel/titanium mesh wheels and an individual electric motor in each wheel."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1971-063C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-15-lrv.webp"
+  },
+  {
+    "id": "apollo-15-fallen-astronaut",
+    "name": {
+      "en": "Fallen Astronaut Memorial"
+    },
+    "equipment": {
+      "en": "Memorial Plaque and Fallen Astronaut Figurine"
+    },
+    "mission": {
+      "en": "Apollo 15"
+    },
+    "destination": "Moon",
+    "type": "Memorial",
+    "launch": "1971-07-26",
+    "date": "1971-08-02",
+    "dateKind": "Deployment",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Remains on the lunar surface."
+    },
+    "location": {
+      "en": "Mare Imbrium"
+    },
+    "latitude": 26.13239,
+    "longitude": 3.6333,
+    "function": {
+      "en": "Tribute to the 14 astronauts and cosmonauts who had died."
+    },
+    "mechanicalReuse": {
+      "en": "Preserved as historical heritage on the ground and as a passive target for orbital image contrast tests."
+    },
+    "source": {
+      "name": "NASA Space Science Data Coordinated Archive (NSSDCA)",
+      "nssdcaId": "1971-063C"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/apollo-15-fallen-astronaut.webp"
+  }
+]

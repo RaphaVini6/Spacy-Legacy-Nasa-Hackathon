@@ -1,0 +1,111 @@
+[
+  {
+    "id": "near-shoemaker",
+    "name": {
+      "en": "NEAR Shoemaker"
+    },
+    "equipment": {
+      "en": "NEAR Shoemaker spacecraft"
+    },
+    "mission": {
+      "en": "NEAR Shoemaker (Discovery Program)"
+    },
+    "destination": "Asteroid",
+    "type": "SpaceProbe",
+    "launch": "1996-02-17",
+    "date": "2001-02-12",
+    "dateKind": "Landing",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Last contact on February 28, 2001."
+    },
+    "location": {
+      "en": "Surface of asteroid 433 Eros (south of Himeros)"
+    },
+    "function": {
+      "en": "First spacecraft to orbit and land on an asteroid, measuring its shape, mass and the absence of a magnetic field."
+    },
+    "mechanicalReuse": {
+      "en": "Serves as a mechanical calibration beacon and fixed navigation point for future mining missions on Eros."
+    },
+    "source": {
+      "name": "NASA Science - NEAR Shoemaker",
+      "nssdcaId": "1996-008A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/near-shoemaker.webp",
+    "imageCredit": "NASA/JPL/JHUAPL (PIA03143)"
+  },
+  {
+    "id": "pioneer-10",
+    "name": {
+      "en": "Pioneer 10"
+    },
+    "equipment": {
+      "en": "Pioneer 10 spacecraft (Pioneer-F)"
+    },
+    "mission": {
+      "en": "Pioneer 10"
+    },
+    "destination": "DeepSpace",
+    "type": "SpaceProbe",
+    "launch": "1972-03-02",
+    "date": "1973-12-04",
+    "dateKind": "JupiterFlyby",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Last signal received on January 23, 2003."
+    },
+    "location": {
+      "en": "Escaping the Solar System toward the star Aldebaran (~118.8 AU)"
+    },
+    "function": {
+      "en": "First crossing of the asteroid belt, Jupiter flyby and carrier of a commemorative plaque."
+    },
+    "mechanicalReuse": {
+      "en": "Acts as a physical interstellar time capsule carrying the engraved aluminum plaque with data about Earth."
+    },
+    "source": {
+      "name": "NASA Science - Pioneer 10",
+      "nssdcaId": "1972-012A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/pioneer-10.webp"
+  },
+  {
+    "id": "kepler",
+    "name": {
+      "en": "Kepler Space Telescope"
+    },
+    "equipment": {
+      "en": "Kepler Space Telescope (K2 mission)"
+    },
+    "mission": {
+      "en": "Kepler / K2"
+    },
+    "destination": "DeepSpace",
+    "type": "Telescope",
+    "launch": "2009-03-06",
+    "date": "2018-10-30",
+    "dateKind": "Retirement",
+    "status": "Inactive",
+    "statusDetail": {
+      "en": "Retired in a safe heliocentric orbit."
+    },
+    "location": {
+      "en": "Heliocentric orbit, far from Earth"
+    },
+    "function": {
+      "en": "Discovered more than 2,600 exoplanets using the transit method."
+    },
+    "mechanicalReuse": {
+      "en": "Operational engineering reuse: during K2 it used the pressure of sunlight on its body as a 'rudder' to keep its pointing. In orbit, it is an inert target for deep-survey telescope detection tests."
+    },
+    "source": {
+      "name": "NASA Science - Kepler / K2",
+      "nssdcaId": "2009-011A"
+    },
+    "reliability": "Confirmed",
+    "imageUrl": "/images/probes/kepler.webp"
+  }
+]
