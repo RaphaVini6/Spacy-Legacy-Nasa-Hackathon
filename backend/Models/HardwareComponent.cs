@@ -36,7 +36,8 @@ public class ComponentData
     public HardwareComponent ToDto(string lang) => new(
         Id, Name.Get(lang), Category, Description.Get(lang), Inspiration, MassKg, OutputW, NeedsSunlight,
         DustSensitive, ConsumptionW, CapacityWh, Rechargeable, DegradationPctPerDay, MinTempC, MaxTempC,
-        ColdProtectionC, HeatProtectionC, NightConsumptionW, RadiationTolerance, NeedsRelayOrbiter, ServiceLifeDays);
+        ColdProtectionC, HeatProtectionC, NightConsumptionW, RadiationTolerance, NeedsRelayOrbiter, ServiceLifeDays,
+        $"/images/hardware/{Id}.webp");
 }
 
 public record HardwareComponent(
@@ -44,4 +45,6 @@ public record HardwareComponent(
     double OutputW, bool NeedsSunlight, bool DustSensitive, double ConsumptionW, double CapacityWh,
     bool Rechargeable, double DegradationPctPerDay, double MinTempC, double MaxTempC, double ColdProtectionC,
     double HeatProtectionC, double NightConsumptionW, int RadiationTolerance, bool NeedsRelayOrbiter,
-    int? ServiceLifeDays);
+    int? ServiceLifeDays,
+    // render made in Blender (tools/render-parts), served by the frontend
+    string ImageUrl);

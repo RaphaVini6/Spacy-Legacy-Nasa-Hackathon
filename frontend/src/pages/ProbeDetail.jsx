@@ -9,7 +9,7 @@ import ListenButton from '../components/ListenButton'
 import { LibrasButton, LibrasGloss } from '../components/LibrasPanel'
 import SurfaceMap from '../components/SurfaceMap'
 import { DestinationBadge, ErrorBox, Loader, Reveal, StatusBadge } from '../components/ui'
-import { formatDate, isPhoto } from '../utils/format'
+import { asset, formatDate, isPhoto } from '../utils/format'
 
 const fmtCoord = (lat, lon) => `${Math.abs(lat).toFixed(3)}° ${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(3)}° ${lon >= 0 ? 'E' : 'W'}`
 
@@ -47,7 +47,7 @@ export default function ProbeDetail() {
         <motion.div className={`detail-media ${isPhoto(p) ? 'photo' : ''}`} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }}>
           {p.imageUrl && (
             <motion.img
-              src={p.imageUrl}
+              src={asset(p.imageUrl)}
               alt={p.imageAudioDescription ?? p.name}
               animate={isPhoto(p) ? undefined : { y: [0, -12, 0], rotate: [0, 0.8, 0] }}
               transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
@@ -132,7 +132,7 @@ export default function ProbeDetail() {
               <div className="gallery">
                 {p.gallery.map((src) => (
                   <button key={src} type="button" className={src.includes('diagram') ? '' : 'dark'} onClick={() => setLightbox(src)} aria-label={t('detail.gallery')}>
-                    <img src={src} alt="" loading="lazy" />
+                    <img src={asset(src)} alt="" loading="lazy" />
                   </button>
                 ))}
               </div>
@@ -153,7 +153,7 @@ export default function ProbeDetail() {
       <AnimatePresence>
         {lightbox && (
           <motion.div className="lightbox" role="dialog" aria-modal="true" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(null)}>
-            <motion.img src={lightbox} alt="" initial={{ scale: 0.92 }} animate={{ scale: 1 }} style={{ background: lightbox.includes('diagram') ? '#fff' : 'transparent' }} />
+            <motion.img src={asset(lightbox)} alt="" initial={{ scale: 0.92 }} animate={{ scale: 1 }} style={{ background: lightbox.includes('diagram') ? '#fff' : 'transparent' }} />
             <button type="button" className="icon-btn" aria-label={t('common.close')} onClick={() => setLightbox(null)}>
               <X size={20} />
             </button>

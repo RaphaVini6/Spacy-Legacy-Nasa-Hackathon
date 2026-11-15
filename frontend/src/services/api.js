@@ -1,11 +1,12 @@
 import axios from 'axios'
 import i18n from '../i18n'
 
-// all calls go to the backend (docs: http://localhost:5000/scalar)
+// all calls go to the backend (docs: http://localhost:5050/scalar)
 const API_URL = `${import.meta.env.VITE_API_URL ?? ''}/api`
 const lang = () => i18n.resolvedLanguage ?? 'en'
 
-export const api = axios.create({ baseURL: API_URL, timeout: 15000 })
+// long timeout: the hosted backend can take up to a minute to wake up
+export const api = axios.create({ baseURL: API_URL, timeout: 70000 })
 
 // send the current language on every request
 api.interceptors.request.use((config) => {

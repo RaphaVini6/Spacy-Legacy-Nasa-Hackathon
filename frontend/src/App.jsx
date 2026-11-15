@@ -22,7 +22,7 @@ const page = (Page) => (
 export default function App() {
   return (
     <PreferencesProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '') || '/'}>
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />

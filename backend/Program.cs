@@ -18,13 +18,13 @@ builder.Services.AddSingleton<DataStore>();
 builder.Services.AddSingleton<SimulationService>();
 builder.Services.AddSingleton<NarrationService>();
 
-// language: ?lang= > Accept-Language > en
+// language: ?lang= or English. Accept-Language is ignored, English is the base language.
 builder.Services.AddRequestLocalization(o =>
 {
     o.SetDefaultCulture(Lang.Default)
      .AddSupportedCultures(Lang.Supported)
      .AddSupportedUICultures(Lang.Supported);
-    o.RequestCultureProviders.Insert(0, new QueryStringRequestCultureProvider { QueryStringKey = "lang", UIQueryStringKey = "lang" });
+    o.RequestCultureProviders = [new QueryStringRequestCultureProvider { QueryStringKey = "lang", UIQueryStringKey = "lang" }];
 });
 
 // other services (urls in appsettings)
