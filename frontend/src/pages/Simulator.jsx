@@ -182,7 +182,7 @@ export default function Simulator() {
               <Meter label={t('sim.battery')} value={parts.find((p) => p.category === 'Storage')?.capacityWh ?? 0} max={2000} unit="Wh" />
               {env && (
                 <>
-                  <h3 style={{ marginTop: 22, fontSize: '1rem' }}>{t('sim.environment')}</h3>
+                  <h3 style={{ marginTop: 22, fontSize: '1.15rem' }}>{t('sim.environment')}</h3>
                   <p className="scn">{env.description}</p>
                   <ul className="env-list">
                     <li>{t('sim.minTemp')} <b>{probe.scenario.minTempC ?? env.minTempC} °C</b></li>
@@ -259,7 +259,7 @@ function RunView({ probe, run, onAgain }) {
         <Satellite className="track-craft" style={{ left: pct(day) }} />
       </div>
 
-      <h3 style={{ fontSize: '1rem', marginTop: 24 }}>{t('sim.events')}</h3>
+      <h3 style={{ fontSize: '1.15rem', marginTop: 24 }}>{t('sim.events')}</h3>
       <ul className="events">
         <AnimatePresence initial={false}>
           {visible.map((e, i) => {
