@@ -16,6 +16,7 @@
   },
   "common": {
     "loading": "Cargando...",
+    "wakingUp": "El servidor se está activando. La primera visita puede tardar hasta un minuto.",
     "error": "No pudimos cargar este contenido.",
     "retry": "Intentar de nuevo",
     "back": "Volver",

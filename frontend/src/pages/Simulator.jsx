@@ -12,6 +12,7 @@ import { usePreferences } from '../context/preferencesContext'
 import ListenButton from '../components/ListenButton'
 import ScoreRing from '../components/ScoreRing'
 import { ErrorBox, Loader, Reveal } from '../components/ui'
+import { asset } from '../utils/format'
 
 const CATEGORIES = ['Power', 'Storage', 'Thermal', 'Mobility', 'Communication', 'Computer']
 const CAT_ICON = { Power: Zap, Storage: BatteryFull, Thermal: Thermometer, Mobility: Navigation, Communication: RadioTower, Computer: Cpu }
@@ -129,7 +130,7 @@ export default function Simulator() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.04 }}
                 >
-                  <img src={p.imageUrl} alt="" />
+                  <img src={asset(p.imageUrl)} alt="" />
                   <span>
                     <strong>{p.name}</strong>
                     <span>
@@ -159,6 +160,7 @@ export default function Simulator() {
                         return (
                           <button key={c.id} type="button" className="option" aria-pressed={selected} onClick={() => setComponents({ ...components, [cat]: c.id })}>
                             {selected && <Check size={16} className="check" />}
+                            {c.imageUrl && <img className="option-img" src={asset(c.imageUrl)} alt="" loading="lazy" />}
                             <strong>{c.name}</strong>
                             <small>{c.description}</small>
                             {probe.realHardware[cat] === c.id && <span className="tag">{t('sim.original')}</span>}
@@ -181,7 +183,7 @@ export default function Simulator() {
               <Meter label={t('sim.battery')} value={parts.find((p) => p.category === 'Storage')?.capacityWh ?? 0} max={2000} unit="Wh" />
               {env && (
                 <>
-                  <h3 style={{ marginTop: 22, fontSize: '1rem' }}>{t('sim.environment')}</h3>
+                  <h3 style={{ marginTop: 22, fontSize: '1.15rem' }}>{t('sim.environment')}</h3>
                   <p className="scn">{env.description}</p>
                   <ul className="env-list">
                     <li>{t('sim.minTemp')} <b>{probe.scenario.minTempC ?? env.minTempC} °C</b></li>
@@ -258,7 +260,7 @@ function RunView({ probe, run, onAgain }) {
         <Satellite className="track-craft" style={{ left: pct(day) }} />
       </div>
 
-      <h3 style={{ fontSize: '1rem', marginTop: 24 }}>{t('sim.events')}</h3>
+      <h3 style={{ fontSize: '1.15rem', marginTop: 24 }}>{t('sim.events')}</h3>
       <ul className="events">
         <AnimatePresence initial={false}>
           {visible.map((e, i) => {

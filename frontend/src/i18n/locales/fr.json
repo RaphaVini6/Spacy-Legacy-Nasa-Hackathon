@@ -16,6 +16,7 @@
   },
   "common": {
     "loading": "Chargement...",
+    "wakingUp": "Le serveur se réveille. La première visite peut prendre jusqu’à une minute.",
     "error": "Impossible de charger ce contenu.",
     "retry": "Réessayer",
     "back": "Retour",

@@ -7,6 +7,7 @@ import { useApi } from '../hooks/useApi'
 import { getMissions, getProbes } from '../services/api'
 import ProbeCard from '../components/ProbeCard'
 import { Reveal } from '../components/ui'
+import { asset } from '../utils/format'
 
 const THIS_YEAR = new Date().getFullYear()
 const FEATURED = ['apollo-11-eagle', 'apollo-15-lrv', 'perseverance', 'ingenuity', 'surveyor-3', 'pioneer-10', 'viking-1-orbiter', 'kepler']
@@ -53,7 +54,7 @@ function HeroVisual() {
       ))}
       <motion.div className="hero-planet" style={{ x: useTransform(x, (v) => -v * 0.5), y: useTransform(y, (v) => -v * 0.5) }} />
       <motion.img
-        src="/images/probes/apollo-11-lunar-module.webp"
+        src={asset('/images/probes/apollo-11-lunar-module.webp')}
         alt=""
         className="hero-craft"
         style={{ x, y }}
@@ -183,13 +184,13 @@ export default function Home() {
               <Rocket size={18} /> {t('home.simCta')}
             </Link>
           </div>
-          <motion.img src="/images/probes/apollo-15-lrv.webp" alt="" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.img src={asset('/images/probes/apollo-15-lrv.webp')} alt="" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
         </Reveal>
       </section>
 
       <section className="section-sm container" style={{ paddingBottom: 110 }}>
         <Reveal className="cta-band" >
-          <motion.img src="/images/probes/apollo-11-plaque.webp" alt="" animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.img src={asset('/images/probes/apollo-11-plaque.webp')} alt="" animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
           <div>
             <span className="eyebrow">
               <GraduationCap size={14} /> {t('learn.eyebrow')}

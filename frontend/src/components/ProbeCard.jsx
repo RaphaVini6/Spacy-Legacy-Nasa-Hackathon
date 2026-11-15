@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { DestinationBadge, StatusBadge } from './ui'
-import { isPhoto } from '../utils/format'
+import { asset, isPhoto } from '../utils/format'
 
 // card with a soft 3D tilt that follows the pointer
 export default function ProbeCard({ probe }) {
@@ -31,7 +31,7 @@ export default function ProbeCard({ probe }) {
             <DestinationBadge destination={probe.destination} />
             <StatusBadge status={probe.status} />
           </div>
-          {probe.imageUrl && <img src={probe.imageUrl} alt="" loading="lazy" />}
+          {probe.imageUrl && <img src={asset(probe.imageUrl)} alt="" loading="lazy" />}
         </div>
         <div className="probe-card-body">
           <h3>{probe.name}</h3>

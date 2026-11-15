@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 
@@ -29,10 +30,16 @@ export function DestinationBadge({ destination }) {
 
 export function Loader() {
   const { t } = useTranslation()
+  // the hosted backend sleeps when idle; tell the visitor why the first load is slow
+  const [slow, setSlow] = useState(false)
+  useEffect(() => {
+    const timer = setTimeout(() => setSlow(true), 6000)
+    return () => clearTimeout(timer)
+  }, [])
   return (
     <div className="loader" role="status">
       <div className="loader-orbit" />
-      <span className="sr-only">{t('common.loading')}</span>
+      {slow ? <p className="loader-hint">{t('common.wakingUp')}</p> : <span className="sr-only">{t('common.loading')}</span>}
     </div>
   )
 }
