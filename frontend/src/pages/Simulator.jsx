@@ -159,6 +159,7 @@ export default function Simulator() {
                         return (
                           <button key={c.id} type="button" className="option" aria-pressed={selected} onClick={() => setComponents({ ...components, [cat]: c.id })}>
                             {selected && <Check size={16} className="check" />}
+                            {c.imageUrl && <img className="option-img" src={c.imageUrl} alt="" loading="lazy" />}
                             <strong>{c.name}</strong>
                             <small>{c.description}</small>
                             {probe.realHardware[cat] === c.id && <span className="tag">{t('sim.original')}</span>}

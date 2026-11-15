@@ -367,7 +367,9 @@ main { flex: 1; }
 .option strong { display: block; font-size: 0.9rem; padding-right: 22px; }
 .option small { display: block; color: var(--muted); font-size: 0.78rem; margin-top: 4px; line-height: 1.4; }
 .option .tag { display: inline-block; margin-top: 8px; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); }
-.option .check { position: absolute; top: 12px; right: 12px; color: var(--gold); }
+.option .check { position: absolute; top: 12px; right: 12px; color: var(--gold); z-index: 1; }
+.option-img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; margin-bottom: 10px; border-radius: 10px; background: radial-gradient(circle at 50% 40%, rgba(148, 163, 184, 0.14), transparent 70%); transition: transform 0.3s; }
+.option:hover .option-img { transform: scale(1.04); }
 .summary { position: sticky; top: calc(var(--header-h) + 20px); padding: 24px; }
 .summary h3 { font-size: 1.1rem; margin-bottom: 4px; }
 .summary .scn { color: var(--muted); font-size: 0.88rem; }
