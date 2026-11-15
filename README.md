@@ -135,8 +135,9 @@ Flow: `feature/*` -> `dev` -> `homologa` -> `prod`, and `prod` -> `master`.
 - Artifacts, parts and teaching content: `backend/Data/*.json` (each text has `en`, `pt`, `es`, `fr`)
 - Simulation messages and narration: `backend/Localization/Messages.cs`
 
-The API answers in the language of `?lang=` or the `Accept-Language` header (default `en`). The frontend
-always sends `lang`.
+English is the base language. The site always opens in English and only changes when the visitor picks
+another language (the choice is saved in the browser). The API answers in the language of `?lang=` and
+falls back to `en`; the browser's `Accept-Language` header is ignored. The frontend always sends `lang`.
 
 ## API
 
