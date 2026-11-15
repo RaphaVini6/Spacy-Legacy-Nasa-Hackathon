@@ -1,0 +1,19 @@
+# Render blueprint: https://render.com/docs/blueprint-spec
+# Hosts the backend and both APIs (one container). The frontend is on GitHub Pages.
+services:
+  - type: web
+    name: spacy-legacy-api
+    runtime: docker
+    plan: free
+    branch: prod
+    dockerfilePath: ./deploy/render/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      # the GitHub Pages site that calls this API
+      - key: Cors__Origins__0
+        value: https://raphavini6.github.io
+      # Knowlez text-to-speech key: Render asks for it when the blueprint is created
+      - key: Speech__Knowlez__Key
+        sync: false

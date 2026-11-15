@@ -12,6 +12,7 @@ import { usePreferences } from '../context/preferencesContext'
 import ListenButton from '../components/ListenButton'
 import ScoreRing from '../components/ScoreRing'
 import { ErrorBox, Loader, Reveal } from '../components/ui'
+import { asset } from '../utils/format'
 
 const CATEGORIES = ['Power', 'Storage', 'Thermal', 'Mobility', 'Communication', 'Computer']
 const CAT_ICON = { Power: Zap, Storage: BatteryFull, Thermal: Thermometer, Mobility: Navigation, Communication: RadioTower, Computer: Cpu }
@@ -129,7 +130,7 @@ export default function Simulator() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.04 }}
                 >
-                  <img src={p.imageUrl} alt="" />
+                  <img src={asset(p.imageUrl)} alt="" />
                   <span>
                     <strong>{p.name}</strong>
                     <span>
@@ -159,7 +160,7 @@ export default function Simulator() {
                         return (
                           <button key={c.id} type="button" className="option" aria-pressed={selected} onClick={() => setComponents({ ...components, [cat]: c.id })}>
                             {selected && <Check size={16} className="check" />}
-                            {c.imageUrl && <img className="option-img" src={c.imageUrl} alt="" loading="lazy" />}
+                            {c.imageUrl && <img className="option-img" src={asset(c.imageUrl)} alt="" loading="lazy" />}
                             <strong>{c.name}</strong>
                             <small>{c.description}</small>
                             {probe.realHardware[cat] === c.id && <span className="tag">{t('sim.original')}</span>}

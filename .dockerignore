@@ -1,0 +1,11 @@
+# used by deploy/render/Dockerfile (built from the repo root)
+**/bin/
+**/obj/
+**/audio-cache/
+**/node_modules/
+frontend/
+docs/
+tools/
+.git/
+.env
+*.user

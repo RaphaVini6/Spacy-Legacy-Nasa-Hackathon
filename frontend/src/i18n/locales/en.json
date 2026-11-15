@@ -16,6 +16,7 @@
   },
   "common": {
     "loading": "Loading...",
+    "wakingUp": "The server is waking up. The first visit can take up to a minute.",
     "error": "We could not load this content.",
     "retry": "Try again",
     "back": "Back",

@@ -459,6 +459,7 @@ main { flex: 1; }
 
 .loader { display: grid; place-items: center; padding: 100px 0; }
 .loader-orbit { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--border); border-top-color: var(--gold); animation: spin 1s linear infinite; }
+.loader-hint { margin-top: 18px; max-width: 340px; text-align: center; color: var(--muted); font-size: 0.95rem; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .error-box { padding: 24px; border-radius: var(--radius); border: 1px solid rgba(248, 113, 113, 0.4); background: rgba(248, 113, 113, 0.08); color: #fecaca; }
 

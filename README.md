@@ -29,6 +29,7 @@ api-1-vlibras/   ASP.NET Core 10 - Portuguese text -> Libras gloss (VLibras)
 api-2-speech/    ASP.NET Core 10 - text-to-speech
 docs/            VLibras swagger
 tools/           Blender script that renders the simulator parts
+deploy/render/   container used to host the backend and APIs on Render
 ```
 
 The frontend only talks to the backend; the backend calls `api-1-vlibras` and `api-2-speech`.
@@ -110,7 +111,7 @@ Docker Compose. `.env` is ignored by git; `.env.example` lists every option with
 | `Speech__Knowlez__Key` | api-2-speech | key of the speech service (ask the team) |
 | `Speech__Azure__Key`, `Speech__Azure__Region` | api-2-speech | optional second speech engine |
 | `VLibras__Token` | api-1-vlibras | optional, only for VLibras video endpoints |
-| `VITE_API_URL` | frontend | leave empty (Vite proxies `/api` to the backend) |
+| `VITE_API_URL` | frontend | leave empty (Vite proxies `/api` to the backend); the Pages build sets it to the Render URL |
 
 .NET settings use `__` for nesting: `Speech__Knowlez__Key` is `Speech:Knowlez:Key` in `appsettings.json`.
 Real environment variables always win over the `.env` file.
@@ -129,6 +130,30 @@ Real environment variables always win over the `.env` file.
 3. Open a pull request to `dev`. It needs approval from @RaphaVini6 (see `.github/CODEOWNERS`).
 
 Flow: `feature/*` -> `dev` -> `homologa` -> `prod`, and `prod` -> `master`.
+
+## Hosting
+
+The `prod` branch is published automatically:
+
+| Part | Where | How |
+|---|---|---|
+| Frontend | GitHub Pages: https://raphavini6.github.io/Spacy-Legacy-Nasa-Hackathon/ | `.github/workflows/pages.yml` builds it on every push to `prod` |
+| Backend + both APIs | Render (free plan): https://spacy-legacy-api.onrender.com | `render.yaml` + `deploy/render/Dockerfile`, redeployed on every push to `prod` |
+
+The backend and the two APIs run in one container on Render (`deploy/render/start.sh`), so they sleep and
+wake up together. On the free plan the service sleeps after 15 minutes without visits; the first request after
+that takes up to a minute and the site shows a "waking up" message meanwhile.
+
+First-time setup (only once):
+
+1. **Render:** New > Blueprint > pick this repository. Render reads `render.yaml` and asks for
+   `Speech__Knowlez__Key`. If the service gets a different URL than the one above, set it as the repository
+   variable `API_URL` (Settings > Secrets and variables > Actions > Variables) and run the Pages workflow again.
+2. **GitHub Pages:** Settings > Pages > Source: **GitHub Actions**. Then Settings > Environments >
+   `github-pages` > Deployment branches: add `prod`.
+
+Without a Knowlez key (or when its quota runs out) the narration falls back to the browser's own voice; the
+Windows voices only exist when the API runs on Windows.
 
 ## Languages
 
