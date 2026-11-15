@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
+import { asset } from '../utils/format'
 
 export default function NotFound() {
   const { t } = useTranslation()
   return (
     <div className="container section" style={{ textAlign: 'center' }}>
       <motion.img
-        src="/images/probes/pioneer-10.webp"
+        src={asset('/images/probes/pioneer-10.webp')}
         alt=""
         style={{ width: 280, margin: '0 auto 30px' }}
         animate={{ rotate: [0, 8, -4, 0], y: [0, -12, 0] }}

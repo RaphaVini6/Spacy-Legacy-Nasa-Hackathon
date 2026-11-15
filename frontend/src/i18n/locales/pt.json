@@ -16,6 +16,7 @@
   },
   "common": {
     "loading": "Carregando...",
+    "wakingUp": "O servidor está acordando. O primeiro acesso pode levar até um minuto.",
     "error": "Não foi possível carregar este conteúdo.",
     "retry": "Tentar de novo",
     "back": "Voltar",

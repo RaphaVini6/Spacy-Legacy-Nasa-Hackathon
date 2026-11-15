@@ -16,7 +16,7 @@ export const LANGUAGES = [
 ]
 
 i18n
-  .use(LanguageDetector) // ?lang=  >  saved choice  >  browser language
+  .use(LanguageDetector) // ?lang=  >  saved choice  >  English (the browser language is ignored on purpose)
   .use(initReactI18next)
   .init({
     resources: { en: { translation: en }, pt: { translation: pt }, es: { translation: es }, fr: { translation: fr } },
@@ -26,8 +26,10 @@ i18n
     load: 'languageOnly',
     interpolation: { escapeValue: false },
     detection: {
-      order: ['querystring', 'localStorage', 'navigator'],
+      order: ['querystring', 'localStorage'],
       lookupQuerystring: 'lang',
+      // new key, so visitors that were auto-switched to their browser language start in English again
+      lookupLocalStorage: 'language',
       caches: ['localStorage'],
     },
   })

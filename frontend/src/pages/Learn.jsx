@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { useApi } from '../hooks/useApi'
 import { getLearn, getRoboticsCases } from '../services/api'
 import { ErrorBox, Loader, Reveal } from '../components/ui'
+import { asset } from '../utils/format'
 
 function PayloadCalculator() {
   const { t, i18n } = useTranslation()
@@ -99,7 +100,7 @@ export default function Learn() {
             <div className="cases">
               {(cases.data ?? []).map((c, i) => (
                 <Reveal key={c.id} delay={i * 0.08} className="card case">
-                  <motion.img src={c.imageUrl} alt="" whileHover={{ scale: 1.06, rotate: -2 }} />
+                  <motion.img src={asset(c.imageUrl)} alt="" whileHover={{ scale: 1.06, rotate: -2 }} />
                   <div>
                     <h3>{c.name}</h3>
                     <p className="kc">{c.keyComponents}</p>
