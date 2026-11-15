@@ -5,7 +5,7 @@ services:
     name: spacy-legacy-api
     runtime: docker
     plan: free
-    branch: prod
+    branch: master
     dockerfilePath: ./deploy/render/Dockerfile
     dockerContext: .
     healthCheckPath: /api/health

@@ -120,10 +120,10 @@ Real environment variables always win over the `.env` file.
 
 | Branch | Use |
 |---|---|
-| `master` | stable code |
+| `master` | stable code, published online (see Hosting) |
 | `dev` | development - start your branches from here |
 | `homologa` | staging, tested before release |
-| `prod` | what is deployed |
+| `prod` | release candidate, merged into `master` |
 
 1. Create a branch from `dev`: `feature/<name>` for new things, `fix/<name>` for corrections.
 2. Commit and push your branch.
@@ -133,12 +133,12 @@ Flow: `feature/*` -> `dev` -> `homologa` -> `prod`, and `prod` -> `master`.
 
 ## Hosting
 
-The `prod` branch is published automatically:
+The `master` branch is published automatically:
 
 | Part | Where | How |
 |---|---|---|
-| Frontend | GitHub Pages: https://raphavini6.github.io/Spacy-Legacy-Nasa-Hackathon/ | `.github/workflows/pages.yml` builds it on every push to `prod` |
-| Backend + both APIs | Render (free plan): https://spacy-legacy-api.onrender.com | `render.yaml` + `deploy/render/Dockerfile`, redeployed on every push to `prod` |
+| Frontend | GitHub Pages: https://raphavini6.github.io/Spacy-Legacy-Nasa-Hackathon/ | `.github/workflows/pages.yml` builds it on every push to `master` |
+| Backend + both APIs | Render (free plan): https://spacy-legacy-api.onrender.com | `render.yaml` + `deploy/render/Dockerfile`, redeployed on every push to `master` |
 
 The backend and the two APIs run in one container on Render (`deploy/render/start.sh`), so they sleep and
 wake up together. On the free plan the service sleeps after 15 minutes without visits; the first request after
@@ -150,7 +150,7 @@ First-time setup (only once):
    `Speech__Knowlez__Key`. If the service gets a different URL than the one above, set it as the repository
    variable `API_URL` (Settings > Secrets and variables > Actions > Variables) and run the Pages workflow again.
 2. **GitHub Pages:** Settings > Pages > Source: **GitHub Actions**. Then Settings > Environments >
-   `github-pages` > Deployment branches: add `prod`.
+   `github-pages` > Deployment branches: add `master`.
 
 Without a Knowlez key (or when its quota runs out) the narration falls back to the browser's own voice; the
 Windows voices only exist when the API runs on Windows.
