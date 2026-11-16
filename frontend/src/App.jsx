@@ -4,14 +4,15 @@ import { PreferencesProvider } from './context/Preferences'
 import Layout from './components/layout/Layout'
 import { Loader } from './components/ui'
 import Home from './pages/Home'
+import { lazyPage } from './utils/reload'
 
 // other pages load on demand
-const Exhibits = lazy(() => import('./pages/Exhibits'))
-const ProbeDetail = lazy(() => import('./pages/ProbeDetail'))
-const Missions = lazy(() => import('./pages/Missions'))
-const Simulator = lazy(() => import('./pages/Simulator'))
-const Learn = lazy(() => import('./pages/Learn'))
-const NotFound = lazy(() => import('./pages/NotFound'))
+const Exhibits = lazy(lazyPage(() => import('./pages/Exhibits')))
+const ProbeDetail = lazy(lazyPage(() => import('./pages/ProbeDetail')))
+const Missions = lazy(lazyPage(() => import('./pages/Missions')))
+const Simulator = lazy(lazyPage(() => import('./pages/Simulator')))
+const Learn = lazy(lazyPage(() => import('./pages/Learn')))
+const NotFound = lazy(lazyPage(() => import('./pages/NotFound')))
 
 const page = (Page) => (
   <Suspense fallback={<Loader />}>

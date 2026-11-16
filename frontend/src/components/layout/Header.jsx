@@ -24,10 +24,7 @@ export default function Header() {
       <div className="container header-inner">
         <Link to="/" className="brand" aria-label={t('brand.name')}>
           <BrandMark className="brand-mark" />
-          <span>
-            {t('brand.name')}
-            <small>{t('brand.tagline')}</small>
-          </span>
+          <span className="brand-name">{t('brand.name')}</span>
         </Link>
 
         <nav className={`nav ${open ? 'open' : ''}`} aria-label="Main">
