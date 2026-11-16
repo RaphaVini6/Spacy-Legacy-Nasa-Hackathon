@@ -261,7 +261,7 @@ main { flex: 1; }
 
 .story-title { font-family: var(--font-poster); font-weight: 800; text-transform: uppercase; line-height: 0.98; letter-spacing: -0.01em; font-size: clamp(2.2rem, 3.9vw, 3.8rem); }
 .story-title > span { display: block; }
-.story-title-xl { font-size: clamp(2.4rem, 3.45vw, 4rem); }
+.story-title-xl { font-size: clamp(2.4rem, 3.45vw, 3.1rem); }
 @media (min-width: 1001px) { .story-title-xl > span { white-space: nowrap; } }
 .story-title .hl { background: linear-gradient(90deg, var(--orange), var(--peach)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-top: 0.12em; margin-top: -0.12em; }
 .story-step:nth-child(3) .story-title > span { display: inline; }
