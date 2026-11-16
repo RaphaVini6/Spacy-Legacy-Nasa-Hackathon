@@ -17,6 +17,8 @@ export const SOFTWARE = [
       { name: 'Lucide icons (lucide-react)', version: '1.73.0', license: 'ISC', url: 'https://github.com/lucide-icons/lucide' },
       { name: 'Inter (Fontsource)', version: '5.3.0', license: 'OFL-1.1', url: 'https://fontsource.org/fonts/inter' },
       { name: 'Space Grotesk (Fontsource)', version: '5.3.0', license: 'OFL-1.1', url: 'https://fontsource.org/fonts/space-grotesk' },
+      { name: 'League Spartan (Fontsource)', version: '5.3.0', license: 'OFL-1.1', url: 'https://fontsource.org/fonts/league-spartan' },
+      { name: 'Tenor Sans (Fontsource)', version: '5.3.0', license: 'OFL-1.1', url: 'https://fontsource.org/fonts/tenor-sans' },
     ],
   },
   {
@@ -25,6 +27,7 @@ export const SOFTWARE = [
       { name: 'Vite', version: '8.3.8', license: 'MIT', url: 'https://github.com/vitejs/vite' },
       { name: '@vitejs/plugin-react', version: '6.3.0', license: 'MIT', url: 'https://github.com/vitejs/vite-plugin-react' },
       { name: 'Oxlint', version: '1.93.0', license: 'MIT', url: 'https://github.com/oxc-project/oxc' },
+      { name: 'Blender (renders of the simulator parts)', version: '5.3', license: 'GPL-3.0', url: 'https://www.blender.org/about/license/' },
     ],
   },
   {

@@ -20,9 +20,14 @@ NuGet `.nuspec`, GitHub license API) on 2026-11-15. The same list is shown on th
 | lucide-react | 1.73.0 | ISC |
 | @fontsource-variable/inter | 5.3.0 | OFL-1.1 |
 | @fontsource-variable/space-grotesk | 5.3.0 | OFL-1.1 |
+| @fontsource-variable/league-spartan | 5.3.0 | OFL-1.1 |
+| @fontsource/tenor-sans | 5.3.0 | OFL-1.1 |
 
 Build tools (dev only): vite 8.3.8 (MIT), @vitejs/plugin-react 6.3.0 (MIT), oxlint 1.93.0 (MIT),
 @types/react and @types/react-dom 19.3.0 (MIT).
+
+Blender 5.3 (GPL-3.0) renders the simulator part images with `tools/render-parts/render_parts.py`.
+Images made with Blender belong to their author; the GPL only covers the Blender program.
 
 > `react-leaflet` was **not** used on purpose: its Hippocratic-2.1 license is not an OSI-approved
 > open-source license. The map uses Leaflet directly.
@@ -51,7 +56,9 @@ Build tools (dev only): vite 8.3.8 (MIT), @vitejs/plugin-react 6.3.0 (MIT), oxli
   [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/).
   The origin of every image (photo, NASA illustration, NASA diagram or team illustration), its credit and
   link are in `backend/Data/images.json` and are shown on the site when the image is clicked.
-- **Team illustrations**: created by the Spacy Legacy team from NASA documents; each one links to the
+- **Simulator part renders** (`frontend/public/images/hardware/`): modeled and rendered by the team in Blender,
+  inspired by the real hardware listed in `backend/Data/components.json`.
+- **Team illustrations**: created by the team from NASA documents; each one links to the
   NASA reference used.
 - **Mission data**: NASA Space Science Data Coordinated Archive (NSSDCA) and official NASA/JPL pages,
   linked from each artifact and from each simulator component (`backend/Data/components.json`).
