@@ -95,14 +95,14 @@ main { flex: 1; }
 
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-display); font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+  font-family: var(--font-thin); font-size: 0.86rem; font-weight: 400;
+  letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold);
 }
 .eyebrow::before { content: ''; width: 22px; height: 1px; background: currentColor; }
-.section-title { font-size: clamp(2rem, 4vw, 3rem); margin-top: 12px; }
+.section-title { font-family: var(--font-poster); font-weight: 800; text-transform: uppercase; letter-spacing: -0.005em; line-height: 1; font-size: clamp(2rem, 4vw, 3.1rem); margin-top: 14px; }
 .section-lead { color: var(--muted); max-width: 640px; margin-top: 14px; font-size: 1.05rem; }
 .text-gradient {
-  background: linear-gradient(100deg, var(--gold-2), var(--gold) 40%, #ff8a4c 100%);
+  background: linear-gradient(90deg, var(--orange), var(--peach));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 
@@ -116,7 +116,13 @@ main { flex: 1; }
 .header-inner { height: 100%; display: flex; align-items: center; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; }
 .brand-mark { width: 34px; height: 34px; }
-.brand small { display: block; font-size: 0.62rem; letter-spacing: 0.24em; color: var(--muted); font-weight: 500; text-transform: uppercase; }
+.brand-name { display: block; font-family: var(--font-thin); font-weight: 400; font-size: 0.86rem; line-height: 1.35; letter-spacing: 0.26em; text-transform: uppercase; color: var(--text); }
+.footer .brand-name { font-size: 0.8rem; margin-bottom: 4px; }
+@media (max-width: 600px) {
+  .header-inner { gap: 12px; }
+  .header .brand-name { font-size: 0.68rem; letter-spacing: 0.14em; max-width: 118px; }
+  .header .brand-mark { width: 28px; height: 28px; }
+}
 .nav { display: flex; gap: 4px; margin-left: auto; }
 .nav a {
   position: relative; padding: 8px 14px; border-radius: 999px; color: var(--muted);
@@ -280,14 +286,14 @@ main { flex: 1; }
 .story-card:hover { z-index: 2; }
 
 .story .mobile-only { display: none; }
-html.contrast .story-title .hl { background: none; color: #ffd166; }
+html.contrast .story-title .hl, html.contrast .page-head h1, html.contrast .stat strong, html.contrast .text-gradient { background: none; color: #ffd166; }
 html.contrast .story-list li, html.contrast .story-list a, html.contrast .story-planet-label { color: #ffd166; }
 
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .stat { padding: 34px 24px; border-right: 1px solid var(--border); }
 .stat:last-child { border-right: 0; }
-.stat strong { display: block; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--text); }
-.stat span { color: var(--muted); font-size: 0.9rem; }
+.stat strong { display: block; font-family: var(--font-poster); font-size: clamp(2.2rem, 4.4vw, 3.4rem); font-weight: 800; line-height: 1.1; background: linear-gradient(90deg, var(--orange), var(--peach)); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
+.stat span { color: var(--gold); font-family: var(--font-thin); font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
 .destinations { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 48px; }
 .destination {
@@ -301,7 +307,7 @@ html.contrast .story-list li, html.contrast .story-list a, html.contrast .story-
 .globe.moon { background: radial-gradient(circle at 35% 35%, #e9edf5, #8b93a6 50%, #2a2f3b 75%); box-shadow: 0 0 80px rgba(201, 211, 230, 0.25); }
 .globe.mars { background: radial-gradient(circle at 35% 35%, #ffb38a, #c4502a 50%, #3a140a 78%); box-shadow: 0 0 80px rgba(226, 100, 58, 0.3); }
 .globe.deep { background: radial-gradient(circle at 35% 35%, #d8d2ff, #6b5ce7 45%, #120d33 78%); box-shadow: 0 0 80px rgba(155, 140, 255, 0.3); }
-.destination h3 { font-size: 1.6rem; position: relative; }
+.destination h3 { font-family: var(--font-poster); font-weight: 800; text-transform: uppercase; font-size: 1.8rem; position: relative; }
 .destination p { color: var(--muted); margin-top: 6px; position: relative; }
 .destination .count { font-family: var(--font-display); font-size: 0.85rem; color: var(--gold); margin-top: 14px; display: inline-flex; gap: 8px; align-items: center; position: relative; }
 
@@ -318,7 +324,7 @@ html.contrast .story-list li, html.contrast .story-list a, html.contrast .story-
 
 /* ---------- exhibits ---------- */
 .page-head { padding: 64px 0 28px; }
-.page-head h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-top: 10px; }
+.page-head h1 { font-family: var(--font-poster); font-weight: 800; text-transform: uppercase; letter-spacing: -0.005em; line-height: 1; font-size: clamp(2.4rem, 5vw, 4rem); margin-top: 14px; padding-top: 0.1em; background: linear-gradient(90deg, var(--orange), var(--peach)); -webkit-background-clip: text; background-clip: text; color: transparent; width: fit-content; }
 .filters { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; padding: 12px; border-radius: var(--radius); border: 1px solid var(--border); background: rgba(8, 12, 22, 0.85); margin-bottom: 32px; position: sticky; top: calc(var(--header-h) + 12px); z-index: 20; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
 .tabs { display: flex; gap: 4px; flex-wrap: wrap; }
 .tab { position: relative; z-index: 0; padding: 9px 16px; border-radius: 12px; border: 0; background: transparent; color: var(--muted); font-weight: 500; font-size: 0.9rem; }
@@ -342,7 +348,7 @@ html.contrast .story-list li, html.contrast .story-list a, html.contrast .story-
 .detail-media .credit { position: absolute; bottom: 10px; right: 14px; font-size: 0.7rem; color: var(--muted); background: rgba(0, 0, 0, 0.55); padding: 2px 8px; border-radius: 6px; }
 .back-link { display: inline-flex; gap: 8px; align-items: center; color: var(--muted); font-size: 0.9rem; margin-top: 28px; }
 .back-link:hover { color: var(--text); }
-.detail-title { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 14px 0 10px; }
+.detail-title { font-family: var(--font-poster); font-weight: 800; text-transform: uppercase; line-height: 1; font-size: clamp(2.1rem, 4.5vw, 3.4rem); margin: 14px 0 10px; }
 .detail-sub { color: var(--muted); }
 .badges { display: flex; flex-wrap: wrap; gap: 8px; }
 .a11y-bar { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }

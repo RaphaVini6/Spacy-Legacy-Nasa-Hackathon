@@ -1,5 +1,5 @@
 {
-  "brand": { "name": "Spacy Legacy", "tagline": "Space heritage museum" },
+  "brand": { "name": "Space Heritage Museum" },
   "nav": { "home": "Home", "exhibits": "Collection", "missions": "Missions", "simulator": "Simulator", "learn": "Learn", "menu": "Menu" },
   "language": { "label": "Language" },
   "a11y": {
@@ -15,6 +15,7 @@
     "librasHint": "Brazilian Sign Language avatar for Portuguese text"
   },
   "common": {
+    "simulate": "Simulate this mission",
     "loading": "Loading...",
     "wakingUp": "The server is waking up. The first visit can take up to a minute.",
     "error": "We could not load this content.",
@@ -71,8 +72,8 @@
   },
   "reliability": { "Confirmed": "Confirmed", "Estimated": "Estimated" },
   "exhibits": {
-    "eyebrow": "Collection",
-    "title": "Exhibits",
+    "eyebrow": "Exhibits",
+    "title": "Collection",
     "lead": "Every artifact NASA left on the Moon, on Mars and beyond, with what it did and how it could be reused.",
     "search": "Search by name, mission or place",
     "empty": "No artifact matches these filters.",

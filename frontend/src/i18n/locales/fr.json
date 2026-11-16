@@ -1,5 +1,5 @@
 {
-  "brand": { "name": "Spacy Legacy", "tagline": "Musée du patrimoine spatial" },
+  "brand": { "name": "Space Heritage Museum" },
   "nav": { "home": "Accueil", "exhibits": "Collection", "missions": "Missions", "simulator": "Simulateur", "learn": "Apprendre", "menu": "Menu" },
   "language": { "label": "Langue" },
   "a11y": {
@@ -15,6 +15,7 @@
     "librasHint": "Avatar en langue des signes brésilienne pour les textes en portugais"
   },
   "common": {
+    "simulate": "Simuler cette mission",
     "loading": "Chargement...",
     "wakingUp": "Le serveur se réveille. La première visite peut prendre jusqu’à une minute.",
     "error": "Impossible de charger ce contenu.",

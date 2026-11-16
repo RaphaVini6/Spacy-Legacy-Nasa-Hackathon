@@ -1,5 +1,5 @@
 {
-  "brand": { "name": "Spacy Legacy", "tagline": "Museu do legado espacial" },
+  "brand": { "name": "Space Heritage Museum" },
   "nav": { "home": "Início", "exhibits": "Acervo", "missions": "Missões", "simulator": "Simulador", "learn": "Aprender", "menu": "Menu" },
   "language": { "label": "Idioma" },
   "a11y": {
@@ -15,6 +15,7 @@
     "librasHint": "Avatar que traduz o texto em português para Libras"
   },
   "common": {
+    "simulate": "Simular esta missão",
     "loading": "Carregando...",
     "wakingUp": "O servidor está acordando. O primeiro acesso pode levar até um minuto.",
     "error": "Não foi possível carregar este conteúdo.",
