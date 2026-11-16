@@ -1,5 +1,5 @@
 {
-  "_comment": "Origin of every probe image. kind: NasaPhoto, NasaIllustration (NASA artist's concept), NasaDiagram, TeamIllustration (made by the team; url points to the NASA reference used). Checked against the NASA pages on 2026-11-15.",
+  "_comment": "Origin of every probe image. kind: NasaPhoto, NasaIllustration (NASA artist's concept), NasaDiagram, TeamIllustration (made by the team with an AI image tool and watermarked \"AI-generated (gpt-6)\"; url points to the NASA reference used). Checked against the NASA pages on 2026-11-15.",
   "images": {
     "/images/probes/apollo-11-easep.webp": { "kind": "NasaPhoto", "credit": "NASA (AS11-40-5951)", "url": "https://images.nasa.gov/details/as11-40-5951" },
     "/images/probes/apollo-alsep.webp": { "kind": "NasaPhoto", "credit": "NASA (AS12-47-6919)", "url": "https://images.nasa.gov/details/as12-47-6919" },

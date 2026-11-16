@@ -185,13 +185,13 @@
       "NasaPhoto": "Foto de la NASA",
       "NasaIllustration": "Ilustración de la NASA",
       "NasaDiagram": "Diagrama de la NASA",
-      "TeamIllustration": "Ilustración hecha por nuestro equipo"
+      "TeamIllustration": "Ilustración del equipo (generada por IA)"
     },
     "kindHint": {
       "NasaPhoto": "Una fotografía real publicada por la NASA.",
       "NasaIllustration": "Un dibujo artístico hecho por la NASA, no una fotografía.",
       "NasaDiagram": "Un dibujo técnico publicado por la NASA.",
-      "TeamIllustration": "Una imagen digital creada por el equipo Spacy Legacy a partir de documentos de la NASA. Puede tener diferencias con el objeto real: consulta la referencia."
+      "TeamIllustration": "Una imagen que el equipo creó con una herramienta de IA (gpt-6), a partir de documentos de la NASA. Puede tener diferencias con el objeto real: consulta la referencia."
     }
   },
   "licenses": {
@@ -223,7 +223,7 @@
       },
       "teamImages": {
         "title": "Ilustraciones del equipo",
-        "text": "Algunas imágenes fueron creadas por el equipo Spacy Legacy. Aparecen como \"Ilustración hecha por nuestro equipo\" y enlazan a la referencia de la NASA usada."
+        "text": "Algunas imágenes fueron creadas por nuestro equipo con una herramienta de IA (gpt-6). Llevan la marca \"AI-generated (gpt-6)\", aparecen como \"Ilustración del equipo (generada por IA)\" y enlazan a la referencia de la NASA usada."
       }
     }
   },
