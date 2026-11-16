@@ -58,7 +58,8 @@ Images made with Blender belong to their author; the GPL only covers the Blender
   link are in `backend/Data/images.json` and are shown on the site when the image is clicked.
 - **Simulator part renders** (`frontend/public/images/hardware/`): modeled and rendered by the team in Blender,
   inspired by the real hardware listed in `backend/Data/components.json`.
-- **Team illustrations**: created by the team from NASA documents; each one links to the
+- **Team illustrations**: created by the team with an AI image tool (gpt-6) from NASA documents, and marked
+  "AI-generated (gpt-6)" on the image; each one links to the
   NASA reference used.
 - **Mission data**: NASA Space Science Data Coordinated Archive (NSSDCA) and official NASA/JPL pages,
   linked from each artifact and from each simulator component (`backend/Data/components.json`).
