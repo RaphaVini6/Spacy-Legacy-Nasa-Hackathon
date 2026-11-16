@@ -1,6 +1,7 @@
 [
   {
     "id": "no-power-source", "category": "Power", "inspiration": "Apollo LM (descent stage)", "massKg": 0,
+    "source": { "name": "NSSDCA - Apollo 11 Lunar Module / EASEP", "nssdcaId": "1969-059C" },
     "name": { "en": "No power generation", "pt": "Sem geração de energia", "es": "Sin generación de energía", "fr": "Aucune production d'énergie" },
     "description": {
       "en": "Relies on the battery alone. Used for short stays, like the Apollo lunar modules.",
@@ -11,6 +12,7 @@
   },
   {
     "id": "solar-panels", "category": "Power", "inspiration": "Spirit, Opportunity, InSight, Pathfinder",
+    "source": { "name": "NSSDCA - Mars Pathfinder", "nssdcaId": "1996-068A" },
     "massKg": 15, "outputW": 200, "needsSunlight": true, "dustSensitive": true, "minTempC": -120, "maxTempC": 120,
     "name": { "en": "Solar panels (GaAs)", "pt": "Painéis solares (GaAs)", "es": "Paneles solares (GaAs)", "fr": "Panneaux solaires (GaAs)" },
     "description": {
@@ -22,28 +24,21 @@
   },
   {
     "id": "rtg-snap19", "category": "Power", "inspiration": "Viking 1 and 2",
+    "source": { "name": "NASA/JPL - Viking Mission to Mars (NASA Facts)", "url": "https://mars.nasa.gov/internal_resources/828/" },
     "massKg": 30, "outputW": 70, "degradationPctPerDay": 0.005, "coldProtectionC": 30,
     "name": { "en": "SNAP-19 RTG", "pt": "RTG SNAP-19", "es": "RTG SNAP-19", "fr": "RTG SNAP-19" },
-    "description": {
-      "en": "Nuclear (radioisotope) generator. Power day and night; its waste heat helps keep the probe warm.",
-      "pt": "Gerador nuclear (radioisótopo). Energia dia e noite; o calor residual ajuda a aquecer a sonda.",
-      "es": "Generador nuclear (radioisótopo). Energía día y noche; su calor residual ayuda a calentar la sonda.",
-      "fr": "Générateur nucléaire (radio-isotope). De l'énergie jour et nuit ; sa chaleur résiduelle aide à réchauffer la sonde."
-    }
+    "description": { "en": "A nuclear battery: a small amount of radioactive material gives off heat, which is turned into electricity. Works day and night, and its extra heat keeps the probe warm.", "pt": "Uma bateria nuclear: um pouco de material radioativo solta calor, que vira eletricidade. Funciona dia e noite, e o calor que sobra aquece a sonda.", "es": "Una batería nuclear: un poco de material radiactivo desprende calor, que se convierte en electricidad. Funciona de día y de noche, y el calor que sobra calienta la sonda.", "fr": "Une batterie nucléaire : un peu de matière radioactive dégage de la chaleur, transformée en électricité. Elle marche jour et nuit, et sa chaleur en trop garde la sonde au chaud." }
   },
   {
     "id": "rtg-snap27", "category": "Power", "inspiration": "Apollo ALSEP stations",
+    "source": { "name": "NASA Science - Radioisotope Power Systems: Legacy Systems", "url": "https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/legacy-systems/" },
     "massKg": 20, "outputW": 70, "degradationPctPerDay": 0.005, "coldProtectionC": 90,
     "name": { "en": "SNAP-27 RTG" },
-    "description": {
-      "en": "Plutonium-238 generator built for the lunar science stations. Its heat keeps the electronics alive through the 14-day night.",
-      "pt": "Gerador de plutônio-238 feito para as estações científicas lunares. Seu calor mantém a eletrônica viva durante a noite de 14 dias.",
-      "es": "Generador de plutonio-238 hecho para las estaciones científicas lunares. Su calor mantiene viva la electrónica durante la noche de 14 días.",
-      "fr": "Générateur au plutonium 238 conçu pour les stations scientifiques lunaires. Sa chaleur maintient l'électronique en vie pendant la nuit de 14 jours."
-    }
+    "description": { "en": "A nuclear battery made for the Apollo science stations on the Moon. Its heat keeps the electronics alive through the 14-day lunar night.", "pt": "Bateria nuclear feita para as estações científicas da Apollo na Lua. O calor dela mantém os eletrônicos vivos durante a noite lunar de 14 dias.", "es": "Batería nuclear hecha para las estaciones científicas Apolo en la Luna. Su calor mantiene viva la electrónica durante la noche lunar de 14 días.", "fr": "Batterie nucléaire conçue pour les stations scientifiques Apollo sur la Lune. Sa chaleur garde l'électronique en vie pendant la nuit lunaire de 14 jours." }
   },
   {
     "id": "mmrtg", "category": "Power", "inspiration": "Curiosity, Perseverance",
+    "source": { "name": "NASA Science - Perseverance Rover Components", "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/" },
     "massKg": 45, "outputW": 110, "degradationPctPerDay": 0.011, "coldProtectionC": 30,
     "name": { "en": "MMRTG", "pt": "MMRTG", "es": "MMRTG", "fr": "MMRTG" },
     "description": {
@@ -66,6 +61,7 @@
   },
   {
     "id": "silver-zinc-primary", "category": "Storage", "inspiration": "Apollo LM and LRV",
+    "source": { "name": "NSSDCA - Apollo Lunar Roving Vehicle", "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html" },
     "massKg": 60, "capacityWh": 25000, "rechargeable": false, "minTempC": -10, "maxTempC": 50,
     "name": { "en": "Silver-zinc battery (primary)", "pt": "Bateria prata-zinco (primária)", "es": "Batería de plata-zinc (primaria)", "fr": "Batterie argent-zinc (primaire)" },
     "description": {
@@ -77,6 +73,7 @@
   },
   {
     "id": "silver-zinc-rechargeable", "category": "Storage", "inspiration": "Mars Pathfinder, Surveyor",
+    "source": { "name": "NSSDCA - Surveyor 3", "nssdcaId": "1967-035A" },
     "massKg": 8, "capacityWh": 600, "degradationPctPerDay": 1.15, "minTempC": -20, "maxTempC": 50,
     "name": { "en": "Silver-zinc battery (rechargeable)", "pt": "Bateria prata-zinco (recarregável)", "es": "Batería de plata-zinc (recargable)", "fr": "Batterie argent-zinc (rechargeable)" },
     "description": {
@@ -88,6 +85,7 @@
   },
   {
     "id": "nickel-cadmium", "category": "Storage", "inspiration": "Viking",
+    "source": { "name": "NASA/JPL - Viking Mission to Mars (NASA Facts)", "url": "https://mars.nasa.gov/internal_resources/828/" },
     "massKg": 20, "capacityWh": 800, "degradationPctPerDay": 0.002, "minTempC": -20, "maxTempC": 50,
     "name": { "en": "Nickel-cadmium battery", "pt": "Bateria níquel-cádmio", "es": "Batería de níquel-cadmio", "fr": "Batterie nickel-cadmium" },
     "description": {
@@ -99,6 +97,7 @@
   },
   {
     "id": "lithium-ion", "category": "Storage", "inspiration": "MER, InSight, Perseverance, Ingenuity",
+    "source": { "name": "NASA NTRS - Lithium-Ion rechargeable batteries on Mars Rover", "url": "https://ntrs.nasa.gov/citations/20060043737" },
     "massKg": 7, "capacityWh": 1200, "degradationPctPerDay": 0.01, "minTempC": -30, "maxTempC": 60,
     "name": { "en": "Lithium-ion battery", "pt": "Bateria de íons de lítio", "es": "Batería de iones de litio", "fr": "Batterie lithium-ion" },
     "description": {
@@ -121,28 +120,21 @@
   },
   {
     "id": "mli", "category": "Thermal", "inspiration": "Apollo, Viking, InSight",
+    "source": { "name": "NSSDCA - Surveyor 3", "nssdcaId": "1967-035A" },
     "massKg": 3, "coldProtectionC": 70, "heatProtectionC": 60,
     "name": { "en": "Multi-layer insulation (MLI)", "pt": "Isolamento multicamadas (MLI)", "es": "Aislamiento multicapa (MLI)", "fr": "Isolation multicouche (MLI)" },
-    "description": {
-      "en": "A blanket of metallized layers. Protects from cold and heat without using power.",
-      "pt": "Cobertor de camadas metalizadas. Protege do frio e do calor sem gastar energia.",
-      "es": "Manta de capas metalizadas. Protege del frío y del calor sin gastar energía.",
-      "fr": "Couverture de couches métallisées. Protège du froid et de la chaleur sans consommer d'énergie."
-    }
+    "description": { "en": "A blanket made of many thin shiny layers, like an emergency blanket. Protects from cold and heat without using power.", "pt": "Uma manta feita de várias camadas finas e brilhantes, como um cobertor de emergência. Protege do frio e do calor sem gastar energia.", "es": "Una manta de muchas capas finas y brillantes, como una manta de emergencia. Protege del frío y del calor sin gastar energía.", "fr": "Une couverture faite de nombreuses couches fines et brillantes, comme une couverture de survie. Elle protège du froid et du chaud sans consommer d'énergie." }
   },
   {
     "id": "rhu", "category": "Thermal", "inspiration": "Spirit, Opportunity, Sojourner",
+    "source": { "name": "NASA/JPL - Mars Exploration Rover (NASA Facts)", "url": "https://mars.nasa.gov/internal_resources/825/" },
     "massKg": 1, "coldProtectionC": 80, "heatProtectionC": -20,
     "name": { "en": "Radioisotope heater units (RHU)", "pt": "Aquecedores de radioisótopo (RHU)", "es": "Calentadores de radioisótopos (RHU)", "fr": "Unités de chauffage à radio-isotopes (RHU)" },
-    "description": {
-      "en": "Plutonium pellets that give off constant heat. Great in the cold, bad in the heat.",
-      "pt": "Pastilhas de plutônio que geram calor contínuo. Ótimo no frio, ruim no calor.",
-      "es": "Pastillas de plutonio que generan calor continuo. Excelentes en el frío, malas con el calor.",
-      "fr": "Pastilles de plutonium qui dégagent une chaleur constante. Idéal par grand froid, mauvais par forte chaleur."
-    }
+    "description": { "en": "Tiny pellets of radioactive material that always give off a little heat. Great in the cold, bad in the heat.", "pt": "Pastilhas minúsculas de material radioativo que soltam sempre um pouco de calor. Ótimas no frio, ruins no calor.", "es": "Pastillas diminutas de material radiactivo que siempre desprenden un poco de calor. Muy buenas en el frío, malas en el calor.", "fr": "De minuscules pastilles de matière radioactive qui dégagent toujours un peu de chaleur. Parfaites dans le froid, mauvaises dans la chaleur." }
   },
   {
     "id": "electric-heater", "category": "Thermal", "inspiration": "Ingenuity",
+    "source": { "name": "NASA/JPL - Ingenuity Landing Press Kit: Spacecraft", "url": "https://www.jpl.nasa.gov/news/press_kits/ingenuity/landing/mission/spacecraft/" },
     "massKg": 0.5, "coldProtectionC": 70, "nightConsumptionW": 10,
     "name": { "en": "Electric heater", "pt": "Aquecedor elétrico", "es": "Calentador eléctrico", "fr": "Chauffage électrique" },
     "description": {
@@ -154,6 +146,7 @@
   },
   {
     "id": "radiator", "category": "Thermal", "inspiration": "Lunar stations and landers",
+    "source": { "name": "NSSDCA - Surveyor 3", "nssdcaId": "1967-035A" },
     "massKg": 4, "heatProtectionC": 100,
     "name": { "en": "Thermal radiator", "pt": "Radiador térmico", "es": "Radiador térmico", "fr": "Radiateur thermique" },
     "description": {
@@ -166,6 +159,7 @@
 
   {
     "id": "landing-legs", "category": "Mobility", "inspiration": "Apollo, Viking and InSight landers", "massKg": 10,
+    "source": { "name": "NSSDCA - Apollo 11 Lunar Module / EASEP", "nssdcaId": "1969-059C" },
     "name": { "en": "Landing legs (stationary)", "pt": "Pernas de pouso (estacionário)", "es": "Patas de aterrizaje (estacionario)", "fr": "Jambes d'atterrissage (stationnaire)" },
     "description": {
       "en": "Does not move. Zero power use, zero wear.",
@@ -176,6 +170,7 @@
   },
   {
     "id": "steel-mesh-wheels", "category": "Mobility", "inspiration": "Lunar Roving Vehicle (Apollo 15-17)",
+    "source": { "name": "NSSDCA - Apollo Lunar Roving Vehicle", "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html" },
     "massKg": 40, "consumptionW": 30, "serviceLifeDays": 30,
     "name": { "en": "Steel/titanium mesh wheels", "pt": "Rodas de malha de aço/titânio", "es": "Ruedas de malla de acero/titanio", "fr": "Roues à maillage acier/titane" },
     "description": {
@@ -187,6 +182,7 @@
   },
   {
     "id": "aluminum-wheels", "category": "Mobility", "inspiration": "Sojourner",
+    "source": { "name": "NASA PDS - Mars Pathfinder Rover (Sojourner) description", "url": "https://planetarydata.jpl.nasa.gov/img/data/mpf/rover/mprv_0001/document/insthost.htm" },
     "massKg": 5, "consumptionW": 5, "serviceLifeDays": 400,
     "name": { "en": "Simple aluminum wheels", "pt": "Rodas de alumínio simples", "es": "Ruedas simples de aluminio", "fr": "Roues simples en aluminium" },
     "description": {
@@ -198,6 +194,7 @@
   },
   {
     "id": "rocker-bogie-aluminum", "category": "Mobility", "inspiration": "Spirit, Opportunity",
+    "source": { "name": "NASA/JPL - Mars Exploration Rover (NASA Facts)", "url": "https://mars.nasa.gov/internal_resources/825/" },
     "massKg": 25, "consumptionW": 8, "serviceLifeDays": 3000,
     "name": { "en": "Rocker-bogie suspension (aluminum)", "pt": "Suspensão rocker-bogie (alumínio)", "es": "Suspensión rocker-bogie (aluminio)", "fr": "Suspension rocker-bogie (aluminium)" },
     "description": {
@@ -209,6 +206,7 @@
   },
   {
     "id": "rocker-bogie-titanium", "category": "Mobility", "inspiration": "Curiosity, Perseverance",
+    "source": { "name": "NASA Science - Perseverance Rover Components", "url": "https://science.nasa.gov/mission/mars-2020-perseverance/rover-components/" },
     "massKg": 60, "consumptionW": 10, "serviceLifeDays": 6000,
     "name": { "en": "Rocker-bogie suspension (titanium)", "pt": "Suspensão rocker-bogie (titânio)", "es": "Suspensión rocker-bogie (titanio)", "fr": "Suspension rocker-bogie (titane)" },
     "description": {
@@ -220,6 +218,7 @@
   },
   {
     "id": "carbon-fiber-rotor", "category": "Mobility", "inspiration": "Ingenuity",
+    "source": { "name": "NASA/JPL - Ingenuity Landing Press Kit: Quick Facts", "url": "https://www.jpl.nasa.gov/news/press_kits/ingenuity/landing/quick_facts/" },
     "massKg": 1, "consumptionW": 6, "serviceLifeDays": 1020,
     "name": { "en": "Carbon fiber coaxial rotor", "pt": "Rotor coaxial de fibra de carbono", "es": "Rotor coaxial de fibra de carbono", "fr": "Rotor coaxial en fibre de carbone" },
     "description": {
@@ -232,6 +231,7 @@
 
   {
     "id": "s-band", "category": "Communication", "inspiration": "Apollo, Surveyor, Viking",
+    "source": { "name": "NSSDCA - Apollo 11 Lunar Module / EASEP", "nssdcaId": "1969-059C" },
     "massKg": 8, "consumptionW": 20,
     "name": { "en": "S-band radio (direct to Earth)", "pt": "Rádio banda S (direto à Terra)", "es": "Radio banda S (directo a la Tierra)", "fr": "Radio bande S (direct vers la Terre)" },
     "description": {
@@ -243,6 +243,7 @@
   },
   {
     "id": "x-band", "category": "Communication", "inspiration": "Mars Pathfinder",
+    "source": { "name": "NSSDCA - InSight", "nssdcaId": "2018-042A" },
     "massKg": 6, "consumptionW": 15,
     "name": { "en": "X-band high-gain antenna", "pt": "Antena banda X de alto ganho", "es": "Antena de alta ganancia banda X", "fr": "Antenne grand gain bande X" },
     "description": {
@@ -254,6 +255,7 @@
   },
   {
     "id": "uhf-relay", "category": "Communication", "inspiration": "MER, InSight, Perseverance",
+    "source": { "name": "NSSDCA - InSight", "nssdcaId": "2018-042A" },
     "massKg": 3, "consumptionW": 8, "needsRelayOrbiter": true,
     "name": { "en": "UHF radio via orbiter relay", "pt": "Rádio UHF via orbitador", "es": "Radio UHF vía orbitador", "fr": "Radio UHF via orbiteur relais" },
     "description": {
@@ -266,17 +268,14 @@
 
   {
     "id": "agc", "category": "Computer", "inspiration": "Apollo LM",
+    "source": { "name": "NSSDCA - Apollo 11 Lunar Module / EASEP", "nssdcaId": "1969-059C" },
     "massKg": 32, "consumptionW": 55, "minTempC": -10, "maxTempC": 70, "radiationTolerance": 8,
     "name": { "en": "Apollo Guidance Computer", "pt": "Apollo Guidance Computer", "es": "Apollo Guidance Computer", "fr": "Apollo Guidance Computer" },
-    "description": {
-      "en": "Core rope memory, very rugged; uses a lot of power.",
-      "pt": "Memória de núcleo trançado, muito resistente; consome bastante energia.",
-      "es": "Memoria de núcleos trenzados, muy resistente; consume mucha energía.",
-      "fr": "Mémoire à tores tressés, très robuste ; consomme beaucoup d'énergie."
-    }
+    "description": { "en": "The Apollo computer. Its memory was woven by hand with wires, so it was very tough, but it used a lot of power.", "pt": "O computador da Apollo. A memória dele era tecida à mão com fios, por isso era muito resistente, mas gastava muita energia.", "es": "La computadora del Apolo. Su memoria se tejía a mano con cables, así que era muy resistente, pero gastaba mucha energía.", "fr": "L'ordinateur d'Apollo. Sa mémoire était tissée à la main avec des fils : il était très solide, mais consommait beaucoup d'énergie." }
   },
   {
     "id": "command-sequencer", "category": "Computer", "inspiration": "Surveyor, Viking",
+    "source": { "name": "NASA/JPL - Viking Mission to Mars (NASA Facts)", "url": "https://mars.nasa.gov/internal_resources/828/" },
     "massKg": 10, "consumptionW": 5, "minTempC": -20, "maxTempC": 60, "radiationTolerance": 9,
     "name": { "en": "Command sequencer", "pt": "Sequenciador de comandos", "es": "Secuenciador de comandos", "fr": "Séquenceur de commandes" },
     "description": {
@@ -288,28 +287,21 @@
   },
   {
     "id": "rad6000", "category": "Computer", "inspiration": "Pathfinder, Spirit, Opportunity",
+    "source": { "name": "NASA PDS (NAIF) - Mars Exploration Rover description", "url": "https://naif.jpl.nasa.gov/pub/naif/pds/data/mer1-m-spice-6-v1.0/mer1sp_1000/catalog/insthost.cat" },
     "massKg": 3, "consumptionW": 10, "minTempC": -40, "maxTempC": 70, "radiationTolerance": 9,
     "name": { "en": "RAD6000", "pt": "RAD6000", "es": "RAD6000", "fr": "RAD6000" },
-    "description": {
-      "en": "Radiation-hardened processor.",
-      "pt": "Processador endurecido contra radiação.",
-      "es": "Procesador endurecido contra la radiación.",
-      "fr": "Processeur durci contre les radiations."
-    }
+    "description": { "en": "A computer chip built to resist space radiation, which can break normal electronics.", "pt": "Um chip de computador feito para resistir à radiação do espaço, que pode estragar eletrônicos comuns.", "es": "Un chip de computadora hecho para resistir la radiación del espacio, que puede dañar la electrónica común.", "fr": "Une puce informatique conçue pour résister aux radiations de l'espace, qui peuvent abîmer l'électronique ordinaire." }
   },
   {
     "id": "rad750", "category": "Computer", "inspiration": "Curiosity, InSight, Perseverance",
+    "source": { "name": "NASA/JPL - Mars 2020 Landing Press Kit: Perseverance Rover", "url": "https://www.jpl.nasa.gov/news/press_kits/mars_2020/landing/mission/spacecraft/perseverance_rover/" },
     "massKg": 3, "consumptionW": 15, "minTempC": -40, "maxTempC": 70, "radiationTolerance": 10,
     "name": { "en": "RAD750", "pt": "RAD750", "es": "RAD750", "fr": "RAD750" },
-    "description": {
-      "en": "Successor to the RAD6000: faster and even more radiation-tolerant.",
-      "pt": "Sucessor do RAD6000: mais rápido e ainda mais resistente.",
-      "es": "Sucesor del RAD6000: más rápido y aún más resistente.",
-      "fr": "Successeur du RAD6000 : plus rapide et encore plus résistant."
-    }
+    "description": { "en": "The next version of the RAD6000: faster and even better at resisting radiation.", "pt": "A versão seguinte do RAD6000: mais rápida e ainda mais resistente à radiação.", "es": "La versión siguiente del RAD6000: más rápida y aún más resistente a la radiación.", "fr": "La version suivante du RAD6000 : plus rapide et encore plus résistante aux radiations." }
   },
   {
     "id": "snapdragon", "category": "Computer", "inspiration": "Ingenuity",
+    "source": { "name": "NASA NTRS - Qualcomm Snapdragon for JPL missions (Ingenuity)", "url": "https://ntrs.nasa.gov/citations/20230006988" },
     "massKg": 0.1, "consumptionW": 5, "minTempC": -40, "maxTempC": 85, "radiationTolerance": 3,
     "name": { "en": "Commercial processor (Snapdragon)", "pt": "Processador comercial (Snapdragon)", "es": "Procesador comercial (Snapdragon)", "fr": "Processeur commercial (Snapdragon)" },
     "description": {
