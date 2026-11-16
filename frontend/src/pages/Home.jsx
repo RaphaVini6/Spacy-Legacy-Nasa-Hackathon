@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { animate, motion, useInView, useMotionValue, useSpring, useTransform } from 'motion/react'
+import { AnimatePresence, animate, motion, useInView, useMotionValue, useSpring, useTransform } from 'motion/react'
 import { ArrowRight, Cpu, GraduationCap, Rocket } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useApi } from '../hooks/useApi'
 import { getMissions, getProbes } from '../services/api'
 import ProbeCard from '../components/ProbeCard'
 import { Reveal } from '../components/ui'
+import { asset } from '../utils/format'
 
 const THIS_YEAR = new Date().getFullYear()
 const FEATURED = ['apollo-11-eagle', 'apollo-15-lrv', 'perseverance', 'ingenuity', 'surveyor-3', 'pioneer-10', 'viking-1-orbiter', 'kepler']
@@ -23,7 +24,7 @@ function Counter({ value }) {
   return <strong ref={ref}>{shown}</strong>
 }
 
-function HeroVisual() {
+function HeroVisual({ dim = false }) {
   const mx = useMotionValue(0)
   const my = useMotionValue(0)
   const x = useSpring(useTransform(mx, [-1, 1], [-18, 18]), { stiffness: 60, damping: 15 })
@@ -45,7 +46,7 @@ function HeroVisual() {
   ]
 
   return (
-    <div className="hero-visual" aria-hidden="true">
+    <div className={`hero-visual ${dim ? 'dim' : ''}`} aria-hidden="true">
       {orbits.map((o) => (
         <motion.div key={o.size} className="orbit" style={{ width: o.size, height: o.size }} animate={{ rotate: o.reverse ? -360 : 360 }} transition={{ duration: o.duration, repeat: Infinity, ease: 'linear' }}>
           <span className="orbit-dot" style={{ background: o.color, boxShadow: `0 0 16px ${o.color}` }} />
@@ -53,7 +54,7 @@ function HeroVisual() {
       ))}
       <motion.div className="hero-planet" style={{ x: useTransform(x, (v) => -v * 0.5), y: useTransform(y, (v) => -v * 0.5) }} />
       <motion.img
-        src="/images/probes/apollo-11-lunar-module.webp"
+        src={asset('/images/probes/apollo-11-lunar-module.webp')}
         alt=""
         className="hero-craft"
         style={{ x, y }}
@@ -62,6 +63,163 @@ function HeroVisual() {
         transition={{ opacity: { duration: 1 }, scale: { duration: 1.2 }, y: { duration: 6, repeat: Infinity, ease: 'easeInOut' } }}
       />
     </div>
+  )
+}
+
+const STORY_CARDS = ['surveyor-3', 'apollo-15-lrv', 'perseverance']
+const CARD_POSE = [
+  { x: -170, y: 50, rotate: -9 },
+  { x: 0, y: 10, rotate: -4 },
+  { x: 170, y: -30, rotate: 2 },
+]
+
+// one screen of the story; tells the parent when it reaches the middle of the viewport
+function StoryStep({ index, onActive, children }) {
+  const ref = useRef(null)
+  const inView = useInView(ref, { margin: '-45% 0px -45% 0px' })
+  useEffect(() => {
+    if (inView) onActive(index)
+  }, [inView, index, onActive])
+  return (
+    <div ref={ref} className="story-step">
+      <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ amount: 0.35 }} transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}>
+        {children}
+      </motion.div>
+    </div>
+  )
+}
+
+const Dash = () => <span className="dash" aria-hidden="true">—</span>
+
+function StoryCards({ cards }) {
+  return (
+    <motion.div className="story-cards" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      {cards.map((p, i) => (
+        <motion.div
+          key={p.id}
+          className="story-card"
+          initial={{ opacity: 0, x: 0, y: 80, rotate: 0 }}
+          animate={{ opacity: 1, ...CARD_POSE[i] }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{ delay: i * 0.08, type: 'spring', stiffness: 120, damping: 18 }}
+        >
+          <ProbeCard probe={p} />
+        </motion.div>
+      ))}
+    </motion.div>
+  )
+}
+
+function Story({ list }) {
+  const { t } = useTranslation()
+  const [active, setActive] = useState(0)
+  const cards = STORY_CARDS.map((id) => list.find((p) => p.id === id)).filter(Boolean)
+  const items = (key) => t(`home.story.${key}.items`, { returnObjects: true })
+
+  const steps = [
+    <>
+      <h1 className="story-title story-title-xl">
+        <span>{t('home.story.s1.line1')}</span>
+        <span className="hl">{t('home.story.s1.line2')}</span>
+      </h1>
+      <div className="mobile-only story-inline">
+        <HeroVisual />
+      </div>
+    </>,
+    <>
+      <h2 className="story-title">
+        <span className="hl">{t('home.story.s2.title')}</span>
+      </h2>
+      <ul className="story-list">
+        {items('s2').map((text, i) => (
+          <li key={text} className="linked">
+            <Link to={['/exhibits', '/simulator', '/learn'][i]}>
+              <Dash />
+              <span>{text}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>,
+    <>
+      <h2 className="story-title">
+        <span>{t('home.story.s3.line1')}</span> <span className="hl">{t('home.story.s3.line2')}</span>
+      </h2>
+      <div className="story-planets">
+        {[
+          { key: 'mars', globe: 'mars', dest: 'Mars' },
+          { key: 'moon', globe: 'moon', dest: 'Moon' },
+          { key: 'space', globe: 'deep', dest: 'DeepSpace' },
+        ].map((pl) => (
+          <Link key={pl.key} to={`/exhibits?destination=${pl.dest}`} className={`story-planet ${pl.key}`}>
+            <span className={`globe ${pl.globe}`} aria-hidden="true" />
+            <span className="story-planet-label">
+              <Dash />
+              {t(`home.story.s3.${pl.key}`)}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </>,
+    <>
+      <h2 className="story-title">
+        <span>{t('home.story.s4.line1')}</span>
+        <span className="hl">{t('home.story.s4.line2')}</span>
+      </h2>
+      <p className="story-sub">{t('home.story.s4.sub')}</p>
+      <ul className="story-list">
+        {items('s4').map((text) => (
+          <li key={text}>
+            <Dash />
+            <span>{text}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mobile-only rail story-rail">
+        {cards.map((p) => (
+          <ProbeCard key={p.id} probe={p} />
+        ))}
+      </div>
+    </>,
+    <>
+      <h2 className="story-title">
+        <span>{t('home.story.s5.line1')}</span>
+        <span className="hl">{t('home.story.s5.line2')}</span>
+      </h2>
+      <p className="story-sub">{t('home.story.s5.sub')}</p>
+      <ul className="story-list">
+        {items('s5').map((text) => (
+          <li key={text}>
+            <Dash />
+            <span>{text}</span>
+          </li>
+        ))}
+      </ul>
+    </>,
+  ]
+
+  return (
+    <section className="story">
+      <div className="container story-grid">
+        <div className="story-steps">
+          {steps.map((content, i) => (
+            <StoryStep key={i} index={i} onActive={setActive}>
+              {content}
+            </StoryStep>
+          ))}
+        </div>
+        <div className="story-visual">
+          <div className="story-sticky">
+            <HeroVisual dim={active === 3} />
+            <AnimatePresence>{active === 3 && <StoryCards key="cards" cards={cards} />}</AnimatePresence>
+          </div>
+        </div>
+      </div>
+      <div className="hero-scroll" aria-hidden="true">
+        {t('home.scroll')}
+        <motion.span className="line" animate={{ scaleY: [0.3, 1, 0.3], originY: 0 }} transition={{ duration: 2, repeat: Infinity }} />
+      </div>
+    </section>
   )
 }
 
@@ -75,48 +233,9 @@ export default function Home() {
   const years = list.length ? THIS_YEAR - Math.min(...list.map((p) => Number(p.launch.slice(0, 4)))) : 0
   const featured = FEATURED.map((id) => list.find((p) => p.id === id)).filter(Boolean)
 
-  const titleWords = [...t('home.title1').split(' ').map((w) => ({ w, hl: false })), ...t('home.title2').split(' ').map((w) => ({ w, hl: true }))]
-
   return (
     <>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <motion.span className="eyebrow" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
-              {t('home.eyebrow')}
-            </motion.span>
-            <h1 style={{ marginTop: 18 }}>
-              {titleWords.map(({ w, hl }, i) => (
-                <motion.span
-                  key={`${w}-${i}`}
-                  className={`word ${hl ? 'text-gradient' : ''}`}
-                  initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{ delay: 0.15 + i * 0.09, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
-                >
-                  {w}
-                </motion.span>
-              ))}
-            </h1>
-            <motion.p className="hero-lead" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.7 }}>
-              {t('home.lead')}
-            </motion.p>
-            <motion.div className="hero-actions" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8, duration: 0.7 }}>
-              <Link to="/exhibits" className="btn btn-primary">
-                {t('home.explore')} <ArrowRight size={18} />
-              </Link>
-              <Link to="/simulator" className="btn">
-                <Rocket size={18} /> {t('home.simulate')}
-              </Link>
-            </motion.div>
-          </div>
-          <HeroVisual />
-        </div>
-        <div className="hero-scroll" aria-hidden="true">
-          {t('home.scroll')}
-          <motion.span className="line" animate={{ scaleY: [0.3, 1, 0.3], originY: 0 }} transition={{ duration: 2, repeat: Infinity }} />
-        </div>
-      </section>
+      <Story list={list} />
 
       <section className="container">
         <div className="stats">
@@ -183,13 +302,13 @@ export default function Home() {
               <Rocket size={18} /> {t('home.simCta')}
             </Link>
           </div>
-          <motion.img src="/images/probes/apollo-15-lrv.webp" alt="" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.img src={asset('/images/probes/apollo-15-lrv.webp')} alt="" animate={{ y: [0, -10, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} />
         </Reveal>
       </section>
 
       <section className="section-sm container" style={{ paddingBottom: 110 }}>
         <Reveal className="cta-band" >
-          <motion.img src="/images/probes/apollo-11-plaque.webp" alt="" animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
+          <motion.img src={asset('/images/probes/apollo-11-plaque.webp')} alt="" animate={{ y: [0, -8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />
           <div>
             <span className="eyebrow">
               <GraduationCap size={14} /> {t('learn.eyebrow')}

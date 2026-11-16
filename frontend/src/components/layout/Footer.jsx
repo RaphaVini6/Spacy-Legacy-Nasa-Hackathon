@@ -9,7 +9,7 @@ export default function Footer() {
         <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
           <BrandMark className="brand-mark" />
           <div>
-            <strong style={{ color: 'var(--text)' }}>{t('brand.name')}</strong>
+            <strong className="brand-name">{t('brand.name')}</strong>
             <div>{t('footer.about')}</div>
           </div>
         </div>

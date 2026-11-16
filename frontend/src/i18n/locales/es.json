@@ -1,5 +1,5 @@
 {
-  "brand": { "name": "Spacy Legacy", "tagline": "Museo del legado espacial" },
+  "brand": { "name": "Space Heritage Museum" },
   "nav": { "home": "Inicio", "exhibits": "Colección", "missions": "Misiones", "simulator": "Simulador", "learn": "Aprender", "menu": "Menú" },
   "language": { "label": "Idioma" },
   "a11y": {
@@ -15,7 +15,12 @@
     "librasHint": "Avatar en lengua de señas brasileña para textos en portugués"
   },
   "common": {
+    "simulate": "Simular esta misión",
+    "pageError": "No se pudo abrir esta página",
+    "pageErrorLead": "Probablemente el sitio se actualizó mientras esta pestaña estaba abierta. Recarga para ver la versión más reciente.",
+    "reload": "Recargar",
     "loading": "Cargando...",
+    "wakingUp": "El servidor se está activando. La primera visita puede tardar hasta un minuto.",
     "error": "No pudimos cargar este contenido.",
     "retry": "Intentar de nuevo",
     "back": "Volver",
@@ -24,7 +29,6 @@
     "libras": "Libras",
     "librasTitle": "Glosa en Libras",
     "librasNote": "Traducido del texto en portugués por VLibras (gov.br).",
-    "simulate": "Simular esta misión",
     "viewAll": "Ver todo",
     "details": "Detalles",
     "close": "Cerrar",
@@ -34,11 +38,7 @@
     "simulable": "Simulador"
   },
   "home": {
-    "eyebrow": "Museo del legado espacial",
-    "title1": "Lo que dejamos",
-    "title2": "allá afuera",
-    "lead": "Módulos de aterrizaje, rovers, memoriales y restos que siguen en la Luna, en Marte y en el espacio profundo. Explora cada uno, descubre cómo podrían reutilizarse sus piezas y pon a prueba tu propio hardware en misiones reales.",
-    "explore": "Explorar la colección",
+    "story": {"s1": {"line1": "Explora con", "line2": "Artemis Innovators"}, "s2": {"title": "Lo que ofrece nuestro sitio:", "items": ["Conceptos sobre objetos abandonados en el espacio", "Simulaciones", "Aprendizajes sobre los componentes esenciales de otros prototipos"]}, "s3": {"line1": "Lugares donde se", "line2": "enfocan los robots del sitio", "mars": "Marte", "moon": "Luna", "space": "Espacio"}, "s4": {"line1": "Sobre los", "line2": "objetos/robots", "sub": "Puedes ver:", "items": ["Año de lanzamiento", "Fecha de llegada", "Ubicación"]}, "s5": {"line1": "También tenemos sistemas de", "line2": "accesibilidad inclusiva", "sub": "Con funciones como:", "items": ["Alto contraste", "Reducción de movimiento", "Widget de Libras"]}},
     "simulate": "Abrir el simulador",
     "scroll": "Desliza",
     "stats": { "artifacts": "objetos en la colección", "destinations": "destinos", "missions": "misiones", "years": "años de exploración" },
