@@ -25,7 +25,6 @@
     "libras": "Libras",
     "librasTitle": "Glose en Libras",
     "librasNote": "Traduit depuis le texte portugais par VLibras (gov.br).",
-    "simulate": "Simuler cette mission",
     "viewAll": "Tout voir",
     "details": "Détails",
     "close": "Fermer",
@@ -35,11 +34,7 @@
     "simulable": "Simulateur"
   },
   "home": {
-    "eyebrow": "Musée du patrimoine spatial",
-    "title1": "Ce que nous avons laissé",
-    "title2": "là-haut",
-    "lead": "Atterrisseurs, rovers, mémoriaux et débris qui reposent encore sur la Lune, sur Mars et dans l'espace lointain. Explorez chacun d'eux, découvrez comment leurs pièces pourraient être réutilisées et testez votre propre matériel sur de vraies missions.",
-    "explore": "Explorer la collection",
+    "story": {"s1": {"line1": "Explorez avec", "line2": "Artemis Innovators"}, "s2": {"title": "Ce que notre site propose :", "items": ["Des notions sur les objets abandonnés dans l'espace", "Des simulations", "Des leçons sur les composants essentiels d'autres prototypes"]}, "s3": {"line1": "Les lieux où", "line2": "se concentrent nos robots", "mars": "Mars", "moon": "Lune", "space": "Espace"}, "s4": {"line1": "À propos des", "line2": "objets/robots", "sub": "Vous pouvez voir :", "items": ["Année de lancement", "Date d'arrivée", "Emplacement"]}, "s5": {"line1": "Nous avons aussi des systèmes", "line2": "d'accessibilité inclusive", "sub": "Avec des fonctions comme :", "items": ["Contraste élevé", "Réduction des animations", "Widget Libras"]}},
     "simulate": "Ouvrir le simulateur",
     "scroll": "Défiler",
     "stats": { "artifacts": "objets dans la collection", "destinations": "destinations", "missions": "missions", "years": "ans d'exploration" },

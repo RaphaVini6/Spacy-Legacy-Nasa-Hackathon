@@ -25,7 +25,6 @@
     "libras": "Libras",
     "librasTitle": "Glosa em Libras",
     "librasNote": "Traduzido do texto em português pelo VLibras (gov.br).",
-    "simulate": "Simular esta missão",
     "viewAll": "Ver tudo",
     "details": "Detalhes",
     "close": "Fechar",
@@ -35,11 +34,7 @@
     "simulable": "Simulador"
   },
   "home": {
-    "eyebrow": "Museu do legado espacial",
-    "title1": "O que deixamos",
-    "title2": "lá fora",
-    "lead": "Módulos de pouso, rovers, memoriais e destroços que ainda estão na Lua, em Marte e no espaço profundo. Explore cada um, veja como suas peças poderiam ser reaproveitadas e teste o seu próprio hardware em missões reais.",
-    "explore": "Explorar o acervo",
+    "story": {"s1": {"line1": "Explore com", "line2": "Artemis Innovators"}, "s2": {"title": "O que o nosso site oferece:", "items": ["Conceitos sobre objetos descartados no espaço", "Simulações", "Aprendizados sobre componentes essenciais de outros protótipos"]}, "s3": {"line1": "Lugares onde os robôs do site estão", "line2": "focados", "mars": "Marte", "moon": "Lua", "space": "Espaço"}, "s4": {"line1": "Sobre os", "line2": "objetos/robôs", "sub": "Você pode ver:", "items": ["Ano de lançamento", "Data de chegada", "Localização"]}, "s5": {"line1": "Também temos sistemas de", "line2": "acessibilidade inclusiva", "sub": "Com recursos como:", "items": ["Alto contraste", "Redução de movimento", "Widget de Libras"]}},
     "simulate": "Abrir o simulador",
     "scroll": "Role",
     "stats": { "artifacts": "itens no acervo", "destinations": "destinos", "missions": "missões", "years": "anos de exploração" },
