@@ -5,7 +5,7 @@ import { ArrowRight, ChevronRight, Info } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useApi } from '../hooks/useApi'
 import { getLearn, getRoboticsCases } from '../services/api'
-import { ErrorBox, Loader, Reveal } from '../components/ui'
+import { ErrorBox, LearnMore, Loader, Reveal } from '../components/ui'
 import { asset } from '../utils/format'
 
 function PayloadCalculator() {
@@ -18,8 +18,7 @@ function PayloadCalculator() {
   return (
     <Reveal className="card calc">
       <div>
-        <h3 style={{ fontSize: '1.4rem' }}>{t('learn.calc')}</h3>
-        <p className="section-lead" style={{ fontSize: '0.95rem' }}>{t('learn.calcLead')}</p>
+        <p className="section-lead" style={{ fontSize: '1rem', marginTop: 0 }}>{t('learn.calcLead')}</p>
         <label htmlFor="calc-mass">
           {t('learn.calcMass')} <b>{mass} kg</b>
         </label>
@@ -61,20 +60,7 @@ export default function Learn() {
             <p>{d.note}</p>
           </Reveal>
 
-          <section className="section-sm">
-            <Reveal>
-              <h2 className="section-title">{t('learn.precedents')}</h2>
-            </Reveal>
-            <div className="two-col">
-              {d.precedents.map((p, i) => (
-                <Reveal key={p.title} delay={i * 0.1} className="card">
-                  <h3>{p.title}</h3>
-                  <p>{p.text}</p>
-                </Reveal>
-              ))}
-            </div>
-          </section>
-
+          {/* teaching method and hands-on cases come first: they are the core of the page */}
           <section className="section-sm">
             <Reveal>
               <h2 className="section-title">{t('learn.methodology')}</h2>
@@ -86,15 +72,13 @@ export default function Learn() {
                   <div className="num">0{i + 1}</div>
                   <h3>{m.title}</h3>
                   <p>{m.text}</p>
+                  <LearnMore details={m.details} />
                 </Reveal>
               ))}
             </div>
-            <PayloadCalculator />
-          </section>
 
-          <section className="section-sm">
             <Reveal>
-              <h2 className="section-title">{t('learn.cases')}</h2>
+              <h3 className="subsection-title">{t('learn.cases')}</h3>
               <p className="section-lead">{t('learn.casesLead')}</p>
             </Reveal>
             <div className="cases">
@@ -105,6 +89,7 @@ export default function Learn() {
                     <h3>{c.name}</h3>
                     <p className="kc">{c.keyComponents}</p>
                     <p>{c.application}</p>
+                    <LearnMore details={c.applicationDetails} />
                     <Link to={`/exhibits/${c.id}`}>
                       {t('learn.open')} <ArrowRight size={14} />
                     </Link>
@@ -119,36 +104,62 @@ export default function Learn() {
               <h2 className="section-title">{t('learn.robotics')}</h2>
               <p className="section-lead">{t('learn.roboticsLead')}</p>
             </Reveal>
-            <Reveal className="cascade" aria-label={t('learn.robotics')}>
+            {/* same numbered-card style as the teaching method, so the steps read as one sequence */}
+            <ol className="phases phases-4" aria-label={t('learn.robotics')}>
               {[
                 ['perception', null],
                 ['decision', null],
                 ['trajectory', 'gpc'],
                 ['actuators', 'pid'],
               ].map(([key, loop], i) => (
-                <motion.div
+                <motion.li
                   key={key}
-                  className="cascade-step"
+                  className="card phase"
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15 }}
                 >
-                  <strong>{t(`learn.cascade.${key}`)}</strong>
-                  {loop && <span>{t(`learn.cascade.${loop}`)}</span>}
-                  {i < 3 && <ChevronRight size={16} style={{ position: 'absolute', right: -9, top: '50%', marginTop: -8, color: 'var(--gold)', background: 'var(--bg)', borderRadius: '50%' }} aria-hidden="true" />}
-                </motion.div>
+                  <div className="num">0{i + 1}</div>
+                  <h3>{t(`learn.cascade.${key}`)}</h3>
+                  <p>{t(`learn.cascade.${key}Text`)}</p>
+                  {loop && <span className="phase-tag">{t(`learn.cascade.${loop}`)}</span>}
+                  {i < 3 && <ChevronRight size={20} className="phase-arrow" aria-hidden="true" />}
+                </motion.li>
               ))}
-            </Reveal>
+            </ol>
             <div className="topics">
               {d.robotics.topics.map((topic, i) => (
                 <Reveal key={topic.title} delay={i * 0.1} className="card">
                   <h3>{topic.title}</h3>
                   <p>{topic.text}</p>
+                  <LearnMore details={topic.details} />
                 </Reveal>
               ))}
             </div>
             <p className="reference">{d.robotics.reference}</p>
+          </section>
+
+          <section className="section-sm">
+            <Reveal>
+              <h2 className="section-title">{t('learn.precedents')}</h2>
+            </Reveal>
+            <div className="two-col">
+              {d.precedents.map((p, i) => (
+                <Reveal key={p.title} delay={i * 0.1} className="card">
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                  <LearnMore details={p.details} />
+                </Reveal>
+              ))}
+            </div>
+          </section>
+
+          <section className="section-sm">
+            <Reveal>
+              <h2 className="section-title">{t('learn.calc')}</h2>
+            </Reveal>
+            <PayloadCalculator />
           </section>
         </>
       )}

@@ -22,8 +22,10 @@ public class LearnTopic
 {
     public LocalizedText Title { get; set; } = new();
     public LocalizedText Text { get; set; } = new();
+    // technical version shown under "Learn more"
+    public LocalizedText? Details { get; set; }
 
-    public object ToDto(string lang) => new { title = Title.Get(lang), text = Text.Get(lang) };
+    public object ToDto(string lang) => new { title = Title.Get(lang), text = Text.Get(lang), details = Details?.Get(lang) };
 }
 
 public class RoboticsData
