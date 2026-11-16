@@ -16,6 +16,9 @@
   },
   "common": {
     "simulate": "Simuler cette mission",
+    "pageError": "Impossible d'ouvrir cette page",
+    "pageErrorLead": "Le site a probablement été mis à jour pendant que cet onglet était ouvert. Rechargez pour obtenir la dernière version.",
+    "reload": "Recharger",
     "loading": "Chargement...",
     "wakingUp": "Le serveur se réveille. La première visite peut prendre jusqu’à une minute.",
     "error": "Impossible de charger ce contenu.",

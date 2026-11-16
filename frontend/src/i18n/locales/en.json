@@ -16,6 +16,9 @@
   },
   "common": {
     "simulate": "Simulate this mission",
+    "pageError": "This page could not be opened",
+    "pageErrorLead": "The site was probably updated while this tab was open. Reload to get the latest version.",
+    "reload": "Reload",
     "loading": "Loading...",
     "wakingUp": "The server is waking up. The first visit can take up to a minute.",
     "error": "We could not load this content.",

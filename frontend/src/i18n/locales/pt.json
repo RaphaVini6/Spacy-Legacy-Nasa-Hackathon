@@ -16,6 +16,9 @@
   },
   "common": {
     "simulate": "Simular esta missão",
+    "pageError": "Não foi possível abrir esta página",
+    "pageErrorLead": "O site provavelmente foi atualizado enquanto esta aba estava aberta. Recarregue para ver a versão mais recente.",
+    "reload": "Recarregar",
     "loading": "Carregando...",
     "wakingUp": "O servidor está acordando. O primeiro acesso pode levar até um minuto.",
     "error": "Não foi possível carregar este conteúdo.",
