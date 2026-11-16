@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'motion/react'
-import { ArrowLeft, BookOpen, Bot, CalendarDays, Cog, ExternalLink, Images, MapPin, Recycle, Rocket, ShieldCheck, Target, X } from 'lucide-react'
+import { ArrowLeft, BookOpen, Bot, CalendarDays, Cog, ExternalLink, Images, Info, MapPin, Recycle, Rocket, ShieldCheck, Target, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useApi } from '../hooks/useApi'
 import { getProbe, getProbeNarration, probeAudio } from '../services/api'
 import ListenButton from '../components/ListenButton'
 import { LibrasButton, LibrasGloss } from '../components/LibrasPanel'
-import SurfaceMap from '../components/SurfaceMap'
-import { DestinationBadge, ErrorBox, Loader, Reveal, StatusBadge } from '../components/ui'
+// the map library is only downloaded on pages that have a map
+const PlanetMap = lazy(() => import('../components/PlanetMap'))
+import { DestinationBadge, ErrorBox, LearnMore, Loader, Reveal, StatusBadge } from '../components/ui'
 import { formatDate, isPhoto } from '../utils/format'
 
 const fmtCoord = (lat, lon) => `${Math.abs(lat).toFixed(3)}° ${lat >= 0 ? 'N' : 'S'}, ${Math.abs(lon).toFixed(3)}° ${lon >= 0 ? 'E' : 'W'}`
@@ -46,18 +47,24 @@ export default function ProbeDetail() {
       <section className="detail-hero">
         <motion.div className={`detail-media ${isPhoto(p) ? 'photo' : ''}`} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }}>
           {p.imageUrl && (
-            <motion.img
-              src={p.imageUrl}
-              alt={p.imageAudioDescription ?? p.name}
-              animate={isPhoto(p) ? undefined : { y: [0, -12, 0], rotate: [0, 0.8, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            />
+            <button type="button" className="media-open" onClick={() => setLightbox(p.image ?? { src: p.imageUrl })} aria-label={t('image.open')}>
+              <motion.img
+                src={p.imageUrl}
+                alt={p.imageAudioDescription ?? p.name}
+                animate={isPhoto(p) ? undefined : { y: [0, -12, 0], rotate: [0, 0.8, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              />
+            </button>
           )}
-          {p.imageCredit && <span className="credit">{t('common.credit')}: {p.imageCredit}</span>}
+          {p.image?.kind && (
+            <span className="credit">
+              <Info size={12} aria-hidden="true" /> {t(`image.kind.${p.image.kind}`)} · {t('image.clickForSource')}
+            </span>
+          )}
         </motion.div>
 
         <div>
-          <motion.div className="badges" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+          <motion.div className="badges badges-lg" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
             <DestinationBadge destination={p.destination} />
             <StatusBadge status={p.status} />
             <span className="badge">{t(`type.${p.type}`)}</span>
@@ -68,7 +75,11 @@ export default function ProbeDetail() {
           <motion.p className="detail-sub" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
             {p.equipment} · {p.mission}
           </motion.p>
-          <p style={{ marginTop: 14, color: 'var(--muted)' }}>{p.statusDetail}</p>
+          {p.statusDetail && (
+            <p className={`status-callout status-callout-${p.status}`}>
+              <strong>{t('detail.statusNow')}</strong> {p.statusDetail}
+            </p>
+          )}
 
           <div className="a11y-bar">
             <ListenButton load={() => probeAudio(p.id)} loadText={() => getProbeNarration(p.id)} />
@@ -99,21 +110,25 @@ export default function ProbeDetail() {
           <Reveal className="card info-block">
             <h2><Target size={20} /> {t('detail.function')}</h2>
             <p>{p.function}</p>
+            <LearnMore details={p.functionDetails} />
           </Reveal>
           <Reveal className="card info-block highlight">
             <h2><Recycle size={20} /> {t('detail.reuse')}</h2>
             <p>{p.mechanicalReuse}</p>
+            <LearnMore details={p.mechanicalReuseDetails} />
           </Reveal>
           {p.keyComponents && (
             <Reveal className="card info-block">
               <h2><Cog size={20} /> {t('detail.keyComponents')}</h2>
               <p>{p.keyComponents}</p>
+              <LearnMore details={p.keyComponentsDetails} />
             </Reveal>
           )}
           {p.roboticsApplication && (
             <Reveal className="card info-block">
               <h2><Bot size={20} /> {t('detail.robotics')}</h2>
               <p>{p.roboticsApplication}</p>
+              <LearnMore details={p.roboticsApplicationDetails} />
             </Reveal>
           )}
         </div>
@@ -122,20 +137,25 @@ export default function ProbeDetail() {
           {hasMap && (
             <Reveal className="card info-block">
               <h2><MapPin size={20} /> {t('detail.map')}</h2>
-              <SurfaceMap destination={p.destination} latitude={p.latitude} longitude={p.longitude} label={`${p.location} ${fmtCoord(p.latitude, p.longitude)}`} />
-              <p className="coords">{fmtCoord(p.latitude, p.longitude)}</p>
+              <Suspense fallback={<div className="planet-map" />}>
+                <PlanetMap destination={p.destination} latitude={p.latitude} longitude={p.longitude} label={p.name} />
+              </Suspense>
+              <p className="coords">{fmtCoord(p.latitude, p.longitude)} · {p.location}</p>
+              {p.coordinatesNote && <p className="hint-small">{p.coordinatesNote}</p>}
+              <p className="hint-small">{t('detail.mapHint')}</p>
             </Reveal>
           )}
-          {p.gallery?.length > 0 && (
+          {p.galleryImages?.length > 0 && (
             <Reveal className="card info-block">
               <h2><Images size={20} /> {t('detail.gallery')}</h2>
               <div className="gallery">
-                {p.gallery.map((src) => (
-                  <button key={src} type="button" className={src.includes('diagram') ? '' : 'dark'} onClick={() => setLightbox(src)} aria-label={t('detail.gallery')}>
-                    <img src={src} alt="" loading="lazy" />
+                {p.galleryImages.map((img) => (
+                  <button key={img.src} type="button" className={img.src.includes('diagram') ? '' : 'dark'} onClick={() => setLightbox(img)} aria-label={t('image.open')}>
+                    <img src={img.src} alt="" loading="lazy" />
                   </button>
                 ))}
               </div>
+              <p className="hint-small">{t('image.clickForSource')}</p>
             </Reveal>
           )}
           <Reveal className="card info-block">
@@ -152,8 +172,22 @@ export default function ProbeDetail() {
 
       <AnimatePresence>
         {lightbox && (
-          <motion.div className="lightbox" role="dialog" aria-modal="true" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(null)}>
-            <motion.img src={lightbox} alt="" initial={{ scale: 0.92 }} animate={{ scale: 1 }} style={{ background: lightbox.includes('diagram') ? '#fff' : 'transparent' }} />
+          <motion.div className="lightbox" role="dialog" aria-modal="true" aria-label={t('image.source')} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setLightbox(null)}>
+            <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
+              <motion.img src={lightbox.src} alt="" initial={{ scale: 0.92 }} animate={{ scale: 1 }} style={{ background: lightbox.src.includes('diagram') ? '#fff' : 'transparent' }} />
+              {/* where the image comes from (asked by the reviewers: every image must show its source) */}
+              {lightbox.kind && (
+                <figcaption className={`image-source image-source-${lightbox.kind}`}>
+                  <strong>{t(`image.kind.${lightbox.kind}`)}</strong>
+                  <span>{t(`image.kindHint.${lightbox.kind}`)}</span>
+                  {lightbox.sourceUrl && (
+                    <a href={lightbox.sourceUrl} target="_blank" rel="noreferrer">
+                      {lightbox.kind === 'TeamIllustration' ? t('image.reference') : t('image.source')}: {lightbox.credit} <ExternalLink size={14} />
+                    </a>
+                  )}
+                </figcaption>
+              )}
+            </figure>
             <button type="button" className="icon-btn" aria-label={t('common.close')} onClick={() => setLightbox(null)}>
               <X size={20} />
             </button>

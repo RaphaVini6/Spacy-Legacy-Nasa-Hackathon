@@ -28,6 +28,8 @@
     "viewAll": "View all",
     "details": "Details",
     "close": "Close",
+    "learnMore": "Learn more",
+    "showLess": "Show less",
     "credit": "Image",
     "days_one": "{{count}} day",
     "days_other": "{{count}} days",
@@ -84,7 +86,9 @@
     "results_other": "{{count}} artifacts"
   },
   "detail": {
+    "mapHint": "Real surface images from NASA Trek. Drag to move and use + and − to zoom.",
     "equipment": "Equipment",
+    "statusNow": "Status today",
     "mission": "Mission",
     "type": "Type",
     "launch": "Launch",
@@ -104,9 +108,13 @@
   "missions": {
     "eyebrow": "Timeline",
     "title": "Missions",
-    "lead": "From Surveyor 3 in 1967 to Perseverance still at work today: the missions behind every artifact in the collection."
+    "lead": "From Surveyor 3 in 1967 to Perseverance still at work today: the missions behind every artifact in the collection.",
+    "mission": "Mission",
+    "equipment_one": "Equipment left there",
+    "equipment_other": "Equipment left there ({{count}})"
   },
   "sim": {
+    "source": "Source",
     "eyebrow": "Mission simulator",
     "title": "Build a probe",
     "lead": "Pick a real mission and choose the hardware. The simulator runs day by day through power, temperature, dust, radiation and wear. Values are simplified for teaching.",
@@ -153,7 +161,13 @@
     "casesLead": "Real probes and the parts students can plan to recover.",
     "robotics": "Mobile robotics fundamentals",
     "roboticsLead": "Why planetary rovers need autonomy, and how their control is organized.",
-    "cascade": { "perception": "Perception", "decision": "Decision and planning", "trajectory": "Trajectory generation", "actuators": "Actuator control", "gpc": "GPC (outer loop)", "pid": "PID (inner loop)" },
+    "cascade": {
+      "perception": "Perception", "decision": "Decision and planning", "trajectory": "Trajectory generation", "actuators": "Actuator control", "gpc": "GPC (outer loop)", "pid": "PID (inner loop)",
+      "perceptionText": "The rover uses cameras and sensors to \"see\" the ground around it: rocks, holes and slopes.",
+      "decisionText": "With that picture, it chooses where to go and plans a safe path, avoiding obstacles on its own.",
+      "trajectoryText": "It turns the plan into exact moves: how fast to drive and how much to turn at each moment.",
+      "actuatorsText": "The wheel motors follow those orders and keep checking themselves, fixing any small error."
+    },
     "calc": "Payload savings",
     "calcLead": "How much would it cost to send these parts from Earth instead of reusing what is already there?",
     "calcMass": "Mass reused",
@@ -162,7 +176,59 @@
     "calcSaving": "estimated savings",
     "open": "Open artifact"
   },
+  "image": {
+    "open": "Enlarge image and see its source",
+    "clickForSource": "click the image to see its source",
+    "source": "Source",
+    "reference": "NASA reference used",
+    "kind": {
+      "NasaPhoto": "NASA photo",
+      "NasaIllustration": "NASA illustration",
+      "NasaDiagram": "NASA diagram",
+      "TeamIllustration": "Illustration made by our team"
+    },
+    "kindHint": {
+      "NasaPhoto": "A real photograph published by NASA.",
+      "NasaIllustration": "An artist's drawing made by NASA, not a photograph.",
+      "NasaDiagram": "A technical drawing published by NASA.",
+      "TeamIllustration": "A digital image created by the Spacy Legacy team from NASA documents. It may have differences from the real object: check the reference."
+    }
+  },
+  "licenses": {
+    "eyebrow": "Open source",
+    "title": "Licenses",
+    "lead": "This site was built with free and open-source tools. Here are all of them, with their versions and licenses, plus the terms for the images and data we use.",
+    "name": "Name",
+    "version": "Version",
+    "license": "License",
+    "group": {
+      "frontend": "Website (frontend)",
+      "build": "Build tools",
+      "backend": "Server (backend)",
+      "services": "Services",
+      "content": "Images, maps and data"
+    },
+    "content": {
+      "nasaMedia": {
+        "title": "NASA images",
+        "text": "NASA photos and illustrations are generally not copyrighted and can be used for education, following the NASA media usage guidelines. Each image on the site shows its credit and link."
+      },
+      "trek": {
+        "title": "Moon and Mars maps",
+        "text": "The maps use the surface mosaics of NASA Moon Trek and Mars Trek (Solar System Treks, NASA)."
+      },
+      "nssdca": {
+        "title": "Mission data",
+        "text": "Names, dates, coordinates and technical details come from the NASA Space Science Data Coordinated Archive (NSSDCA) and other official NASA pages, linked on each page."
+      },
+      "teamImages": {
+        "title": "Team illustrations",
+        "text": "Some images were created by the Spacy Legacy team. They are marked as \"Illustration made by our team\" and link to the NASA reference used."
+      }
+    }
+  },
   "footer": {
+    "licenses": "Open-source licenses",
     "about": "Educational project built for the NASA hackathon.",
     "data": "Data from NASA and NSSDCA documents. NASA images are in the public domain.",
     "a11y": "Accessible in Libras and with audio narration."

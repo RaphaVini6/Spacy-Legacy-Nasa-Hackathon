@@ -41,19 +41,34 @@ export default function Missions() {
                 transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
               >
                 <div className="tl-year">{m.date.slice(0, 4)}</div>
+                <span className="tl-label">{t('missions.mission')}</span>
                 <h3>{m.name}</h3>
-                <p>{formatDate(m.date, i18n.resolvedLanguage)}</p>
-                <div className="badges" style={{ marginTop: 10, justifyContent: i % 2 === 0 ? 'flex-end' : 'flex-start' }}>
+                <p>
+                  <span className="tl-label">{t(`dateKind.${m.dateKind}`)}:</span> {formatDate(m.date, i18n.resolvedLanguage)}
+                </p>
+                <div className="badges tl-badges">
                   <DestinationBadge destination={m.destination} />
                   <StatusBadge status={m.status} />
                 </div>
-                <div className="tl-probes">
+              </motion.div>
+              <motion.div
+                className="tl-gear"
+                initial={{ opacity: 0, x: i % 2 === 0 ? 40 : -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-80px' }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
+              >
+                <span className="tl-label">{t('missions.equipment', { count: m.probes.length })}</span>
+                <ul>
                   {m.probes.map((p) => (
-                    <Link key={p.id} to={`/exhibits/${p.id}`} className="chip">
-                      {p.name}
-                    </Link>
+                    <li key={p.id}>
+                      <Link to={`/exhibits/${p.id}`} className="tl-probe">
+                        {p.imageUrl && <img src={p.imageUrl} alt="" loading="lazy" />}
+                        <span>{p.name}</span>
+                      </Link>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </motion.div>
               <motion.span
                 className="tl-node"

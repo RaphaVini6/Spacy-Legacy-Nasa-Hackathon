@@ -17,6 +17,7 @@ and blind users (audio narration).
 | Missions | timeline of the missions, from Surveyor 3 (1967) to Perseverance |
 | Simulator | pick a mission, choose the hardware (power, battery, insulation, wheels, radio, computer) and launch |
 | Learn | historical precedents, a 3-phase teaching method, payload savings calculator and mobile robotics basics |
+| Licenses | open-source licenses of every tool used, plus the terms of the NASA images, maps and data (see also `THIRD_PARTY_LICENSES.md`) |
 
 Accessibility menu (top right): high contrast, text size, reduce motion and the VLibras widget.
 

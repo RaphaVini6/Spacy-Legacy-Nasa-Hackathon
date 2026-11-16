@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import BrandMark from '../BrandMark'
 
@@ -16,6 +17,7 @@ export default function Footer() {
         <div style={{ maxWidth: 460 }}>
           <div>{t('footer.data')}</div>
           <div>{t('footer.a11y')}</div>
+          <Link to="/licenses" className="footer-link">{t('footer.licenses')}</Link>
         </div>
       </div>
     </footer>

@@ -28,8 +28,9 @@ export default function AccessibilityMenu() {
 
   return (
     <div ref={ref} style={{ position: 'relative' }}>
-      <button type="button" className="icon-btn" aria-expanded={open} aria-label={t('a11y.open')} title={t('a11y.open')} onClick={() => setOpen((o) => !o)}>
+      <button type="button" className="icon-btn labeled-btn" aria-expanded={open} aria-label={t('a11y.open')} title={t('a11y.open')} onClick={() => setOpen((o) => !o)}>
         <Accessibility size={20} />
+        <span className="labeled-btn-text" aria-hidden="true">{t('a11y.title')}</span>
       </button>
       <AnimatePresence>
         {open && (

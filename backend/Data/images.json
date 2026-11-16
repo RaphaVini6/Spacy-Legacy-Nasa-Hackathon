@@ -1,0 +1,33 @@
+{
+  "_comment": "Origin of every probe image. kind: NasaPhoto, NasaIllustration (NASA artist's concept), NasaDiagram, TeamIllustration (made by the team; url points to the NASA reference used). Checked against the NASA pages on 2026-11-15.",
+  "images": {
+    "/images/probes/apollo-11-easep.webp": { "kind": "NasaPhoto", "credit": "NASA (AS11-40-5951)", "url": "https://images.nasa.gov/details/as11-40-5951" },
+    "/images/probes/apollo-alsep.webp": { "kind": "NasaPhoto", "credit": "NASA (AS12-47-6919)", "url": "https://images.nasa.gov/details/as12-47-6919" },
+    "/images/probes/viking-lander-1.webp": { "kind": "NasaPhoto", "credit": "NASA/JPL (PIA09703 - Viking Lander model)", "url": "https://science.nasa.gov/photojournal/viking-lander-model/" },
+    "/images/probes/mars-pathfinder.webp": { "kind": "NasaPhoto", "credit": "NASA/JPL (PIA01550)", "url": "https://science.nasa.gov/photojournal/pathfinder-landers-in-test-and-on-mars/" },
+    "/images/probes/sojourner.webp": { "kind": "NasaPhoto", "credit": "NASA/JPL (PIA01551)", "url": "https://science.nasa.gov/photojournal/newly-deployed-sojourner-rover/" },
+    "/images/probes/pathfinder-airbags.webp": { "kind": "NasaPhoto", "credit": "NASA/JPL (PIA00612)", "url": "https://science.nasa.gov/photojournal/martian-surface-and-pathfinder-airbags/" },
+    "/images/probes/perseverance-landing-debris.webp": { "kind": "NasaPhoto", "credit": "NASA/JPL-Caltech (PIA25217)", "url": "https://science.nasa.gov/photojournal/rover-landing-gear-seen-from-the-air-by-mars-helicopter/" },
+    "/images/probes/near-shoemaker.webp": { "kind": "NasaPhoto", "credit": "NASA/JPL/JHUAPL (PIA03143)", "url": "https://science.nasa.gov/photojournal/location-of-the-near-shoemaker-landing-site/" },
+    "/images/probes/spirit.webp": { "kind": "NasaIllustration", "credit": "NASA/JPL (PIA04239)", "url": "https://science.nasa.gov/photojournal/artists-concept-of-mars-exploration-rover/" },
+    "/images/probes/opportunity.webp": { "kind": "NasaIllustration", "credit": "NASA/JPL (PIA04240)", "url": "https://science.nasa.gov/photojournal/artists-concept-of-mars-exploration-rover-2/" },
+    "/images/probes/insight.webp": { "kind": "NasaIllustration", "credit": "NASA/JPL-Caltech (PIA19811)", "url": "https://science.nasa.gov/photojournal/artists-concept-of-insight-lander-on-mars-2/" },
+    "/images/probes/perseverance.webp": { "kind": "NasaIllustration", "credit": "NASA/JPL-Caltech (PIA23962)", "url": "https://science.nasa.gov/photojournal/portrait-of-perseverance-and-ingenuity-artists-concept/" },
+    "/images/probes/ingenuity.webp": { "kind": "NasaIllustration", "credit": "NASA/JPL-Caltech (PIA24466)", "url": "https://science.nasa.gov/photojournal/ingenuity-helicopter-on-mars-illustration/" },
+    "/images/probes/diagram-lunar-module.webp": { "kind": "NasaDiagram", "credit": "NASA History Office (via NSSDCA)", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" },
+    "/images/probes/diagram-viking-orbiter.webp": { "kind": "NasaDiagram", "credit": "NASA (via NSSDCA)", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A" },
+    "/images/probes/apollo-11-lunar-module.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo 11 Lunar Module", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" },
+    "/images/probes/lm-descent-stage.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo Lunar Module", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" },
+    "/images/probes/lm-ascent-stage.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo Lunar Module", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" },
+    "/images/probes/apollo-11-plaque.webp": { "kind": "NasaPhoto", "credit": "NASA (AS11-40-5899)", "url": "https://images.nasa.gov/details/as11-40-5899" },
+    "/images/probes/lm-descent-stage-intrepid.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo 12 Lunar Module", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C" },
+    "/images/probes/diagram-intrepid-lm6.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo 12 Lunar Module", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-099C" },
+    "/images/probes/surveyor-3.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Surveyor 3", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1967-035A" },
+    "/images/probes/apollo-15-lunar-module.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo 15 Lunar Module", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C" },
+    "/images/probes/apollo-15-lrv.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Apollo Lunar Roving Vehicle", "url": "https://nssdc.gsfc.nasa.gov/planetary/lunar/apollo_lrv.html" },
+    "/images/probes/apollo-15-fallen-astronaut.webp": { "kind": "NasaPhoto", "credit": "NASA (AS15-88-11894)", "url": "https://images.nasa.gov/details/as15-88-11894" },
+    "/images/probes/viking-1-orbiter.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Viking 1 Orbiter", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1975-075A" },
+    "/images/probes/pioneer-10.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Pioneer 10", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1972-012A" },
+    "/images/probes/kepler.webp": { "kind": "TeamIllustration", "credit": "NSSDCA - Kepler", "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=2009-011A" }
+  }
+}

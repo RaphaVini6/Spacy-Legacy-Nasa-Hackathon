@@ -41,10 +41,16 @@ export default function Header() {
               )}
             </NavLink>
           ))}
+          {/* on small phones the language picker moves into the menu so the "Accessibility" label fits */}
+          <div className="nav-lang">
+            <LanguageSwitcher id="language-menu" />
+          </div>
         </nav>
 
         <div className="header-tools">
-          <LanguageSwitcher />
+          <div className="header-lang">
+            <LanguageSwitcher />
+          </div>
           <AccessibilityMenu />
           <button type="button" className="icon-btn menu-toggle" aria-expanded={open} aria-label={t('nav.menu')} onClick={() => setOpen((o) => !o)}>
             {open ? <X size={20} /> : <Menu size={20} />}

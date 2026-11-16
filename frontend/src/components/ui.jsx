@@ -1,7 +1,32 @@
-import { motion } from 'motion/react'
+import { useId, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
+import { ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 // small shared pieces
+
+// "Learn more": the main text is written for teenagers, the details keep the technical wording for research
+export function LearnMore({ details }) {
+  const { t } = useTranslation()
+  const [open, setOpen] = useState(false)
+  const id = useId()
+  if (!details) return null
+  return (
+    <div className="learn-more">
+      <button type="button" className="learn-more-btn" aria-expanded={open} aria-controls={id} onClick={() => setOpen((o) => !o)}>
+        {open ? t('common.showLess') : t('common.learnMore')}
+        <ChevronDown size={16} style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} aria-hidden="true" />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div id={id} className="learn-more-body" initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }}>
+            <p>{details}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 export function Reveal({ children, delay = 0, y = 24, className, as = 'div' }) {
   const Tag = motion[as]

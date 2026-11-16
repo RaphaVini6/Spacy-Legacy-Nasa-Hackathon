@@ -28,6 +28,8 @@
     "viewAll": "Ver tudo",
     "details": "Detalhes",
     "close": "Fechar",
+    "learnMore": "Saber mais",
+    "showLess": "Mostrar menos",
     "credit": "Imagem",
     "days_one": "{{count}} dia",
     "days_other": "{{count}} dias",
@@ -84,7 +86,9 @@
     "results_other": "{{count}} itens"
   },
   "detail": {
+    "mapHint": "Imagens reais da superfície, do NASA Trek. Arraste para mover e use + e − para dar zoom.",
     "equipment": "Equipamento",
+    "statusNow": "Situação hoje",
     "mission": "Missão",
     "type": "Tipo",
     "launch": "Lançamento",
@@ -104,9 +108,13 @@
   "missions": {
     "eyebrow": "Linha do tempo",
     "title": "Missões",
-    "lead": "Da Surveyor 3, em 1967, ao Perseverance, que segue trabalhando: as missões por trás de cada item do acervo."
+    "lead": "Da Surveyor 3, em 1967, ao Perseverance, que segue trabalhando: as missões por trás de cada item do acervo.",
+    "mission": "Missão",
+    "equipment_one": "Equipamento que ficou lá",
+    "equipment_other": "Equipamentos que ficaram lá ({{count}})"
   },
   "sim": {
+    "source": "Fonte",
     "eyebrow": "Simulador de missões",
     "title": "Monte uma sonda",
     "lead": "Escolha uma missão real e defina o hardware. O simulador avança dia a dia considerando energia, temperatura, poeira, radiação e desgaste. Os valores são simplificados para fins didáticos.",
@@ -153,7 +161,13 @@
     "casesLead": "Sondas reais e as peças que os alunos podem planejar recuperar.",
     "robotics": "Fundamentos de robótica móvel",
     "roboticsLead": "Por que rovers planetários precisam de autonomia e como o controle deles é organizado.",
-    "cascade": { "perception": "Percepção", "decision": "Decisão e planejamento", "trajectory": "Geração de trajetória", "actuators": "Controle de atuadores", "gpc": "GPC (malha externa)", "pid": "PID (malha interna)" },
+    "cascade": {
+      "perception": "Percepção", "decision": "Decisão e planejamento", "trajectory": "Geração de trajetória", "actuators": "Controle de atuadores", "gpc": "GPC (malha externa)", "pid": "PID (malha interna)",
+      "perceptionText": "O rover usa câmeras e sensores para \"enxergar\" o chão ao redor: pedras, buracos e subidas.",
+      "decisionText": "Com essa imagem, ele escolhe para onde ir e planeja um caminho seguro, desviando dos obstáculos sozinho.",
+      "trajectoryText": "Ele transforma o plano em movimentos exatos: com que velocidade andar e quanto virar a cada momento.",
+      "actuatorsText": "Os motores das rodas seguem essas ordens e ficam se conferindo o tempo todo, corrigindo qualquer pequeno erro."
+    },
     "calc": "Economia de carga útil",
     "calcLead": "Quanto custaria mandar essas peças da Terra em vez de reaproveitar o que já está lá?",
     "calcMass": "Massa reaproveitada",
@@ -162,7 +176,59 @@
     "calcSaving": "de economia estimada",
     "open": "Ver item"
   },
+  "image": {
+    "open": "Ampliar imagem e ver a fonte",
+    "clickForSource": "clique na imagem para ver a fonte",
+    "source": "Fonte",
+    "reference": "Referência da NASA usada",
+    "kind": {
+      "NasaPhoto": "Foto da NASA",
+      "NasaIllustration": "Ilustração da NASA",
+      "NasaDiagram": "Diagrama da NASA",
+      "TeamIllustration": "Ilustração feita pela nossa equipe"
+    },
+    "kindHint": {
+      "NasaPhoto": "Uma fotografia real publicada pela NASA.",
+      "NasaIllustration": "Um desenho artístico feito pela NASA, não uma fotografia.",
+      "NasaDiagram": "Um desenho técnico publicado pela NASA.",
+      "TeamIllustration": "Uma imagem digital criada pela equipe Spacy Legacy a partir de documentos da NASA. Pode ter diferenças do objeto real: confira a referência."
+    }
+  },
+  "licenses": {
+    "eyebrow": "Código aberto",
+    "title": "Licenças",
+    "lead": "Este site foi feito com ferramentas livres e de código aberto. Aqui estão todas elas, com versões e licenças, e também os termos das imagens e dados que usamos.",
+    "name": "Nome",
+    "version": "Versão",
+    "license": "Licença",
+    "group": {
+      "frontend": "Site (frontend)",
+      "build": "Ferramentas de build",
+      "backend": "Servidor (backend)",
+      "services": "Serviços",
+      "content": "Imagens, mapas e dados"
+    },
+    "content": {
+      "nasaMedia": {
+        "title": "Imagens da NASA",
+        "text": "Fotos e ilustrações da NASA em geral não têm direitos autorais e podem ser usadas para educação, seguindo as regras de uso de mídia da NASA. Cada imagem do site mostra o crédito e o link."
+      },
+      "trek": {
+        "title": "Mapas da Lua e de Marte",
+        "text": "Os mapas usam os mosaicos da superfície do NASA Moon Trek e Mars Trek (Solar System Treks, NASA)."
+      },
+      "nssdca": {
+        "title": "Dados das missões",
+        "text": "Nomes, datas, coordenadas e detalhes técnicos vêm do NASA Space Science Data Coordinated Archive (NSSDCA) e de outras páginas oficiais da NASA, com link em cada página."
+      },
+      "teamImages": {
+        "title": "Ilustrações da equipe",
+        "text": "Algumas imagens foram criadas pela equipe Spacy Legacy. Elas aparecem como \"Ilustração feita pela nossa equipe\" e têm link para a referência da NASA usada."
+      }
+    }
+  },
   "footer": {
+    "licenses": "Licenças de código aberto",
     "about": "Projeto educacional feito para o hackathon da NASA.",
     "data": "Dados de documentos da NASA e do NSSDCA. Imagens da NASA em domínio público.",
     "a11y": "Acessível em Libras e com narração em áudio."

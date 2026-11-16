@@ -28,6 +28,8 @@
     "viewAll": "Tout voir",
     "details": "Détails",
     "close": "Fermer",
+    "learnMore": "En savoir plus",
+    "showLess": "Afficher moins",
     "credit": "Image",
     "days_one": "{{count}} jour",
     "days_other": "{{count}} jours",
@@ -84,7 +86,9 @@
     "results_other": "{{count}} objets"
   },
   "detail": {
+    "mapHint": "Images réelles de la surface, issues de NASA Trek. Faites glisser pour vous déplacer et utilisez + et − pour zoomer.",
     "equipment": "Équipement",
+    "statusNow": "Situation actuelle",
     "mission": "Mission",
     "type": "Type",
     "launch": "Lancement",
@@ -104,9 +108,13 @@
   "missions": {
     "eyebrow": "Chronologie",
     "title": "Missions",
-    "lead": "De Surveyor 3 en 1967 à Perseverance, toujours en activité : les missions derrière chaque objet de la collection."
+    "lead": "De Surveyor 3 en 1967 à Perseverance, toujours en activité : les missions derrière chaque objet de la collection.",
+    "mission": "Mission",
+    "equipment_one": "Équipement resté sur place",
+    "equipment_other": "Équipements restés sur place ({{count}})"
   },
   "sim": {
+    "source": "Source",
     "eyebrow": "Simulateur de mission",
     "title": "Construisez une sonde",
     "lead": "Choisissez une vraie mission et le matériel. Le simulateur avance jour après jour en tenant compte de l'énergie, de la température, de la poussière, des radiations et de l'usure. Les valeurs sont simplifiées à des fins pédagogiques.",
@@ -153,7 +161,13 @@
     "casesLead": "De vraies sondes et les pièces que les élèves peuvent prévoir de récupérer.",
     "robotics": "Fondamentaux de la robotique mobile",
     "roboticsLead": "Pourquoi les rovers planétaires ont besoin d'autonomie et comment leur commande est organisée.",
-    "cascade": { "perception": "Perception", "decision": "Décision et planification", "trajectory": "Génération de trajectoire", "actuators": "Commande des actionneurs", "gpc": "GPC (boucle externe)", "pid": "PID (boucle interne)" },
+    "cascade": {
+      "perception": "Perception", "decision": "Décision et planification", "trajectory": "Génération de trajectoire", "actuators": "Commande des actionneurs", "gpc": "GPC (boucle externe)", "pid": "PID (boucle interne)",
+      "perceptionText": "Le rover utilise des caméras et des capteurs pour « voir » le sol autour de lui : roches, trous et pentes.",
+      "decisionText": "Avec cette image, il choisit où aller et planifie un chemin sûr, en évitant seul les obstacles.",
+      "trajectoryText": "Il transforme le plan en mouvements précis : à quelle vitesse rouler et de combien tourner à chaque instant.",
+      "actuatorsText": "Les moteurs des roues suivent ces ordres et se vérifient sans arrêt, en corrigeant la moindre petite erreur."
+    },
     "calc": "Économies de charge utile",
     "calcLead": "Combien coûterait l'envoi de ces pièces depuis la Terre au lieu de réutiliser ce qui est déjà sur place ?",
     "calcMass": "Masse réutilisée",
@@ -162,7 +176,59 @@
     "calcSaving": "d'économies estimées",
     "open": "Voir l'objet"
   },
+  "image": {
+    "open": "Agrandir l'image et voir sa source",
+    "clickForSource": "cliquez sur l'image pour voir sa source",
+    "source": "Source",
+    "reference": "Référence de la NASA utilisée",
+    "kind": {
+      "NasaPhoto": "Photo de la NASA",
+      "NasaIllustration": "Illustration de la NASA",
+      "NasaDiagram": "Schéma de la NASA",
+      "TeamIllustration": "Illustration réalisée par notre équipe"
+    },
+    "kindHint": {
+      "NasaPhoto": "Une vraie photographie publiée par la NASA.",
+      "NasaIllustration": "Un dessin d'artiste réalisé par la NASA, pas une photographie.",
+      "NasaDiagram": "Un dessin technique publié par la NASA.",
+      "TeamIllustration": "Une image numérique créée par l'équipe Spacy Legacy à partir de documents de la NASA. Elle peut différer de l'objet réel : consultez la référence."
+    }
+  },
+  "licenses": {
+    "eyebrow": "Open source",
+    "title": "Licences",
+    "lead": "Ce site a été réalisé avec des outils libres et open source. Les voici tous, avec leurs versions et licences, ainsi que les conditions des images et données utilisées.",
+    "name": "Nom",
+    "version": "Version",
+    "license": "Licence",
+    "group": {
+      "frontend": "Site web (frontend)",
+      "build": "Outils de build",
+      "backend": "Serveur (backend)",
+      "services": "Services",
+      "content": "Images, cartes et données"
+    },
+    "content": {
+      "nasaMedia": {
+        "title": "Images de la NASA",
+        "text": "Les photos et illustrations de la NASA ne sont en général pas protégées par le droit d'auteur et peuvent servir à l'éducation, selon les règles d'utilisation des médias de la NASA. Chaque image du site indique son crédit et son lien."
+      },
+      "trek": {
+        "title": "Cartes de la Lune et de Mars",
+        "text": "Les cartes utilisent les mosaïques de surface de NASA Moon Trek et Mars Trek (Solar System Treks, NASA)."
+      },
+      "nssdca": {
+        "title": "Données des missions",
+        "text": "Les noms, dates, coordonnées et détails techniques viennent du NASA Space Science Data Coordinated Archive (NSSDCA) et d’autres pages officielles de la NASA, liées sur chaque page."
+      },
+      "teamImages": {
+        "title": "Illustrations de l'équipe",
+        "text": "Certaines images ont été créées par l'équipe Spacy Legacy. Elles sont indiquées « Illustration réalisée par notre équipe » et renvoient à la référence de la NASA utilisée."
+      }
+    }
+  },
   "footer": {
+    "licenses": "Licences open source",
     "about": "Projet éducatif réalisé pour le hackathon de la NASA.",
     "data": "Données issues de documents de la NASA et du NSSDCA. Images de la NASA dans le domaine public.",
     "a11y": "Accessible en Libras et avec narration audio."
