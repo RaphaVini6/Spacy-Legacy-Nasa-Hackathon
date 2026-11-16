@@ -1,6 +1,6 @@
 {
-  "brand": { "name": "Spacy Legacy", "tagline": "Space heritage museum" },
-  "nav": { "home": "Home", "exhibits": "Exhibits", "missions": "Missions", "simulator": "Simulator", "learn": "Learn", "menu": "Menu" },
+  "brand": { "name": "Space Heritage Museum" },
+  "nav": { "home": "Home", "exhibits": "Collection", "missions": "Missions", "simulator": "Simulator", "learn": "Learn", "menu": "Menu" },
   "language": { "label": "Language" },
   "a11y": {
     "skip": "Skip to content",
@@ -15,6 +15,10 @@
     "librasHint": "Brazilian Sign Language avatar for Portuguese text"
   },
   "common": {
+    "simulate": "Simulate this mission",
+    "pageError": "This page could not be opened",
+    "pageErrorLead": "The site was probably updated while this tab was open. Reload to get the latest version.",
+    "reload": "Reload",
     "loading": "Loading...",
     "wakingUp": "The server is waking up. The first visit can take up to a minute.",
     "error": "We could not load this content.",
@@ -25,7 +29,6 @@
     "libras": "Libras",
     "librasTitle": "Libras gloss",
     "librasNote": "Translated from the Portuguese text by VLibras (gov.br).",
-    "simulate": "Simulate this mission",
     "viewAll": "View all",
     "details": "Details",
     "close": "Close",
@@ -35,11 +38,7 @@
     "simulable": "Simulator"
   },
   "home": {
-    "eyebrow": "Space heritage museum",
-    "title1": "What we left",
-    "title2": "out there",
-    "lead": "Landers, rovers, memorials and debris that still rest on the Moon, on Mars and in deep space. Explore each one, see how its parts could be reused, and test your own hardware against real missions.",
-    "explore": "Explore the exhibits",
+    "story": {"s1": {"line1": "Explore with", "line2": "Artemis Innovators"}, "s2": {"title": "What our website offers:", "items": ["Concepts about objects discarded in space", "Simulations", "Lessons about the essential components of other prototypes"]}, "s3": {"line1": "Places where the site's bots are", "line2": "focused", "mars": "Mars", "moon": "Moon", "space": "Space"}, "s4": {"line1": "About the", "line2": "objects/robots", "sub": "You can see:", "items": ["Launch year", "Arrival date", "Location"]}, "s5": {"line1": "We also have inclusive", "line2": "accessibility systems", "sub": "With features such as:", "items": ["High contrast", "Motion reduction", "Libras widget"]}},
     "simulate": "Open the simulator",
     "scroll": "Scroll",
     "stats": { "artifacts": "artifacts in the collection", "destinations": "destinations", "missions": "missions", "years": "years of exploration" },
@@ -76,8 +75,8 @@
   },
   "reliability": { "Confirmed": "Confirmed", "Estimated": "Estimated" },
   "exhibits": {
-    "eyebrow": "Collection",
-    "title": "Exhibits",
+    "eyebrow": "Exhibits",
+    "title": "Collection",
     "lead": "Every artifact NASA left on the Moon, on Mars and beyond, with what it did and how it could be reused.",
     "search": "Search by name, mission or place",
     "empty": "No artifact matches these filters.",
