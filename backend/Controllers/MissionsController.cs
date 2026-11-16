@@ -16,12 +16,18 @@ public class MissionsController(DataStore store) : ControllerBase
         return store.Probes
             .Where(p => destination is null || p.Destination == destination)
             .GroupBy(p => p.Mission.Get(Lang.Default))
-            .Select(g => new MissionSummary(
-                g.First().Mission.Get(lang),
-                g.First().Destination,
-                g.Min(p => p.Date)!,
-                g.Any(p => p.Status == ProbeStatus.Active) ? ProbeStatus.Active : ProbeStatus.Inactive,
-                g.Select(p => new ProbeRef(p.Id, p.Name.Get(lang))).ToList()))
+            .Select(g =>
+            {
+                // the earliest event of the mission defines the date shown in the timeline
+                var first = g.OrderBy(p => p.Date).First();
+                return new MissionSummary(
+                    first.Mission.Get(lang),
+                    first.Destination,
+                    first.Date,
+                    first.DateKind,
+                    g.Any(p => p.Status == ProbeStatus.Active) ? ProbeStatus.Active : ProbeStatus.Inactive,
+                    g.Select(p => new ProbeRef(p.Id, p.Name.Get(lang), p.ImageUrl)).ToList());
+            })
             .OrderBy(m => m.Date);
     }
 
@@ -30,5 +36,5 @@ public class MissionsController(DataStore store) : ControllerBase
         [PlanetaryEnvironment.Moon.ToDto(Lang.Current), PlanetaryEnvironment.Mars.ToDto(Lang.Current)];
 }
 
-public record MissionSummary(string Name, Destination Destination, string Date, ProbeStatus Status, List<ProbeRef> Probes);
-public record ProbeRef(string Id, string Name);
+public record MissionSummary(string Name, Destination Destination, string Date, DateKind DateKind, ProbeStatus Status, List<ProbeRef> Probes);
+public record ProbeRef(string Id, string Name, string? ImageUrl);

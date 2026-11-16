@@ -12,6 +12,7 @@ const ProbeDetail = lazy(lazyPage(() => import('./pages/ProbeDetail')))
 const Missions = lazy(lazyPage(() => import('./pages/Missions')))
 const Simulator = lazy(lazyPage(() => import('./pages/Simulator')))
 const Learn = lazy(lazyPage(() => import('./pages/Learn')))
+const Licenses = lazy(lazyPage(() => import('./pages/Licenses')))
 const NotFound = lazy(lazyPage(() => import('./pages/NotFound')))
 
 const page = (Page) => (
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/missions" element={page(Missions)} />
             <Route path="/simulator" element={page(Simulator)} />
             <Route path="/learn" element={page(Learn)} />
+            <Route path="/licenses" element={page(Licenses)} />
             <Route path="*" element={page(NotFound)} />
           </Route>
         </Routes>

@@ -18,16 +18,26 @@ public class ProbeData
     public LocalizedText Location { get; set; } = new();
     public double? Latitude { get; set; }
     public double? Longitude { get; set; }
+    // main texts are written for 13-15 year olds; the *Details versions keep the technical wording ("Learn more")
     public LocalizedText Function { get; set; } = new();
+    public LocalizedText? FunctionDetails { get; set; }
     public LocalizedText MechanicalReuse { get; set; } = new();
+    public LocalizedText? MechanicalReuseDetails { get; set; }
     public LocalizedText? KeyComponents { get; set; }
+    public LocalizedText? KeyComponentsDetails { get; set; }
     public LocalizedText? RoboticsApplication { get; set; }
+    public LocalizedText? RoboticsApplicationDetails { get; set; }
     public Source Source { get; set; } = new();
     public Reliability Reliability { get; set; }
     public LocalizedText? ReliabilityNote { get; set; }
     public string? ImageUrl { get; set; }
     public string? ImageCredit { get; set; }
     public List<string> Gallery { get; set; } = new();
+    // filled by DataStore from Data/images.json
+    public ImageRef? Image { get; set; }
+    public List<ImageRef> GalleryImages { get; set; } = new();
+    // shown under the map when the point is not where the object is today (e.g. rovers that kept driving)
+    public LocalizedText? CoordinatesNote { get; set; }
     public LocalizedText? ImageAudioDescription { get; set; }
     // category -> component id
     public Dictionary<HardwareCategory, string> RealHardware { get; set; } = new();
@@ -36,9 +46,12 @@ public class ProbeData
 
     public Probe ToDto(string lang) => new(
         Id, Name.Get(lang), Equipment.Get(lang), Mission.Get(lang), Destination, Type, Launch, Date, DateKind, Status,
-        StatusDetail.Get(lang), Location.Get(lang), Latitude, Longitude, Function.Get(lang), MechanicalReuse.Get(lang),
-        KeyComponents?.Get(lang), RoboticsApplication?.Get(lang), Source, Reliability, ReliabilityNote?.Get(lang),
-        ImageUrl, ImageCredit, Gallery, ImageAudioDescription?.Get(lang), RealHardware, Scenario is not null, Scenario?.ToDto(lang));
+        StatusDetail.Get(lang), Location.Get(lang), Latitude, Longitude,
+        Function.Get(lang), FunctionDetails?.Get(lang), MechanicalReuse.Get(lang), MechanicalReuseDetails?.Get(lang),
+        KeyComponents?.Get(lang), KeyComponentsDetails?.Get(lang), RoboticsApplication?.Get(lang), RoboticsApplicationDetails?.Get(lang),
+        Source, Reliability, ReliabilityNote?.Get(lang),
+        ImageUrl, ImageCredit, Gallery, Image, GalleryImages, CoordinatesNote?.Get(lang),
+        ImageAudioDescription?.Get(lang), RealHardware, Scenario is not null, Scenario?.ToDto(lang));
 }
 
 public class Source
@@ -78,9 +91,11 @@ public class DustStormData
 public record Probe(
     string Id, string Name, string Equipment, string Mission, Destination Destination, ProbeType Type,
     string Launch, string Date, DateKind DateKind, ProbeStatus Status, string StatusDetail, string Location,
-    double? Latitude, double? Longitude, string Function, string MechanicalReuse, string? KeyComponents,
-    string? RoboticsApplication, Source Source, Reliability Reliability, string? ReliabilityNote,
-    string? ImageUrl, string? ImageCredit, List<string> Gallery, string? ImageAudioDescription,
+    double? Latitude, double? Longitude, string Function, string? FunctionDetails, string MechanicalReuse,
+    string? MechanicalReuseDetails, string? KeyComponents, string? KeyComponentsDetails,
+    string? RoboticsApplication, string? RoboticsApplicationDetails, Source Source, Reliability Reliability, string? ReliabilityNote,
+    string? ImageUrl, string? ImageCredit, List<string> Gallery, ImageRef? Image, List<ImageRef> GalleryImages,
+    string? CoordinatesNote, string? ImageAudioDescription,
     Dictionary<HardwareCategory, string> RealHardware, bool Simulable, Scenario? Scenario);
 
 public record Scenario(

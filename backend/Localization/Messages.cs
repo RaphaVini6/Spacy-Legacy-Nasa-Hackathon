@@ -25,15 +25,15 @@ public static class Messages
 
         // simulation
         ["sim.noRelay"] = T(
-            "No communication: the UHF radio needs a relay orbiter, and there was none at the Moon.",
-            "Sem comunicação: o rádio UHF precisa de um orbitador retransmissor, e não havia nenhum na Lua.",
-            "Sin comunicación: la radio UHF necesita un orbitador repetidor y no había ninguno en la Luna.",
-            "Aucune communication : la radio UHF a besoin d'un orbiteur relais, et il n'y en avait aucun autour de la Lune."),
+            "No communication: the UHF radio needs a satellite in orbit to pass the message on to Earth, and there was none at the Moon.",
+            "Sem comunicação: o rádio UHF precisa de um satélite em órbita para repassar a mensagem até a Terra, e não havia nenhum na Lua.",
+            "Sin comunicación: la radio UHF necesita un satélite en órbita que pase el mensaje a la Tierra, y no había ninguno en la Luna.",
+            "Aucune communication : la radio UHF a besoin d'un satellite en orbite pour transmettre le message à la Terre, et il n'y en avait aucun autour de la Lune."),
         ["sim.noAtmosphere"] = T(
-            "A rotor cannot create lift without an atmosphere: the helicopter cannot take off on the Moon.",
-            "O rotor não gera sustentação sem atmosfera: o helicóptero não decola na Lua.",
-            "Un rotor no genera sustentación sin atmósfera: el helicóptero no puede despegar en la Luna.",
-            "Un rotor ne produit aucune portance sans atmosphère : l'hélicoptère ne peut pas décoller sur la Lune."),
+            "The Moon has no air: the blades have nothing to push against, so the helicopter cannot take off.",
+            "A Lua não tem ar: as hélices não têm onde empurrar, então o helicóptero não decola.",
+            "La Luna no tiene aire: las palas no tienen nada que empujar, así que el helicóptero no puede despegar.",
+            "La Lune n'a pas d'air : les pales n'ont rien sur quoi pousser, donc l'hélicoptère ne peut pas décoller."),
         ["sim.overheat"] = T(
             "Overheating: the environment reaches {0}°C and the probe tolerates {1}°C. Reduced operations during the hottest hours.",
             "Superaquecimento: o ambiente chega a {0}°C e a sonda suporta {1}°C. Operações reduzidas nas horas mais quentes.",

@@ -27,6 +27,17 @@ public class DataStore
             .ToList();
         Components = Read<List<ComponentData>>(Path.Combine(dir, "components.json"));
         Learn = Read<LearnData>(Path.Combine(dir, "learn.json"));
+
+        // attach the origin of every image (Data/images.json) to the probes
+        var catalog = Read<ImageCatalog>(Path.Combine(dir, "images.json")).Images;
+        ImageRef Resolve(string src) => catalog.TryGetValue(src, out var s)
+            ? new ImageRef(src, s.Kind, s.Credit, s.Url)
+            : new ImageRef(src, null, null, null);
+        foreach (var p in Probes)
+        {
+            p.Image = p.ImageUrl is null ? null : Resolve(p.ImageUrl);
+            p.GalleryImages = p.Gallery.Select(Resolve).ToList();
+        }
     }
 
     public ProbeData? Probe(string id) => Probes.FirstOrDefault(p => p.Id.Equals(id, StringComparison.OrdinalIgnoreCase));

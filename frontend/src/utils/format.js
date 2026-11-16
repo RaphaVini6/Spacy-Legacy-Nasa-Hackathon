@@ -1,5 +1,7 @@
-// NASA photos fill the frame; the team's 3D renders are cut out and float
-export const isPhoto = (probe) => Boolean(probe?.imageCredit) || Boolean(probe?.imageUrl?.includes('surveyor-3'))
+// NASA images fill the frame; the team's 3D renders are cut out and float
+// (surveyor-3 is a team render that has its own background)
+export const isPhoto = (probe) =>
+  (probe?.image?.kind != null && probe.image.kind !== 'TeamIllustration') || Boolean(probe?.imageUrl?.includes('surveyor-3'))
 
 // public files (images) live under the site base path, e.g. /Spacy-Legacy-Nasa-Hackathon/ on GitHub Pages
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
