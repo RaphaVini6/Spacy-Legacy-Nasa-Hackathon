@@ -27,6 +27,7 @@ public class LearnController(DataStore store) : ControllerBase
                 Location = p.Location.Get(lang),
                 KeyComponents = p.KeyComponents?.Get(lang),
                 Application = p.RoboticsApplication!.Get(lang),
+                ApplicationDetails = p.RoboticsApplicationDetails?.Get(lang),
                 p.ImageUrl,
             });
     }

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { AnimatePresence, animate, motion } from 'motion/react'
 import {
-  Activity, ArrowLeft, BatteryFull, BatteryLow, Check, Cpu, Flag, Flame, Navigation, RadioTower, Radiation,
+  Activity, ArrowLeft, BatteryFull, BatteryLow, Check, Cpu, ExternalLink, Flag, Flame, Navigation, RadioTower, Radiation,
   RotateCcw, Rocket, Satellite, Thermometer, Wind, Wrench, Zap,
 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -157,14 +157,23 @@ export default function Simulator() {
                     <div className="options">
                       {(hardware.data?.[cat] ?? []).map((c) => {
                         const selected = components[cat] === c.id
+                        const sourceUrl = c.source?.url ?? c.source?.nssdcaUrl
                         return (
-                          <button key={c.id} type="button" className="option" aria-pressed={selected} onClick={() => setComponents({ ...components, [cat]: c.id })}>
-                            {selected && <Check size={16} className="check" />}
-                            {c.imageUrl && <img className="option-img" src={asset(c.imageUrl)} alt="" loading="lazy" />}
-                            <strong>{c.name}</strong>
-                            <small>{c.description}</small>
-                            {probe.realHardware[cat] === c.id && <span className="tag">{t('sim.original')}</span>}
-                          </button>
+                          <div key={c.id} className="option-cell">
+                            <button type="button" className="option" aria-pressed={selected} onClick={() => setComponents({ ...components, [cat]: c.id })}>
+                              {selected && <Check size={16} className="check" />}
+                              {c.imageUrl && <img className="option-img" src={asset(c.imageUrl)} alt="" loading="lazy" />}
+                              <strong>{c.name}</strong>
+                              <small>{c.description}</small>
+                              {probe.realHardware[cat] === c.id && <span className="tag">{t('sim.original')}</span>}
+                            </button>
+                            {/* official document showing this part is real */}
+                            {sourceUrl && (
+                              <a className="option-source" href={sourceUrl} target="_blank" rel="noreferrer" title={c.source.name}>
+                                <ExternalLink size={12} aria-hidden="true" /> {t('sim.source')}: {c.source.name}
+                              </a>
+                            )}
+                          </div>
                         )
                       })}
                     </div>

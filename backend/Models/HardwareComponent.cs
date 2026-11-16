@@ -9,6 +9,8 @@ public class ComponentData
     public HardwareCategory Category { get; set; }
     public LocalizedText Description { get; set; } = new();
     public string Inspiration { get; set; } = "";
+    // official NASA document that describes this part (null for the "none" options)
+    public Source? Source { get; set; }
     public double MassKg { get; set; }
 
     // Power
@@ -34,14 +36,14 @@ public class ComponentData
     public int? ServiceLifeDays { get; set; }          // wear (mobility)
 
     public HardwareComponent ToDto(string lang) => new(
-        Id, Name.Get(lang), Category, Description.Get(lang), Inspiration, MassKg, OutputW, NeedsSunlight,
+        Id, Name.Get(lang), Category, Description.Get(lang), Inspiration, Source, MassKg, OutputW, NeedsSunlight,
         DustSensitive, ConsumptionW, CapacityWh, Rechargeable, DegradationPctPerDay, MinTempC, MaxTempC,
         ColdProtectionC, HeatProtectionC, NightConsumptionW, RadiationTolerance, NeedsRelayOrbiter, ServiceLifeDays,
         $"/images/hardware/{Id}.webp");
 }
 
 public record HardwareComponent(
-    string Id, string Name, HardwareCategory Category, string Description, string Inspiration, double MassKg,
+    string Id, string Name, HardwareCategory Category, string Description, string Inspiration, Source? Source, double MassKg,
     double OutputW, bool NeedsSunlight, bool DustSensitive, double ConsumptionW, double CapacityWh,
     bool Rechargeable, double DegradationPctPerDay, double MinTempC, double MaxTempC, double ColdProtectionC,
     double HeatProtectionC, double NightConsumptionW, int RadiationTolerance, bool NeedsRelayOrbiter,

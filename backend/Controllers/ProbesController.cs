@@ -20,7 +20,7 @@ public class ProbesController(DataStore store) : ControllerBase
             .Select(p => p.ToDto(lang));
 
         if (!string.IsNullOrWhiteSpace(search))
-            probes = probes.Where(p => $"{p.Name} {p.Mission} {p.Function} {p.Location}".Contains(search, StringComparison.OrdinalIgnoreCase));
+            probes = probes.Where(p => $"{p.Name} {p.Mission} {p.Function} {p.FunctionDetails} {p.Location}".Contains(search, StringComparison.OrdinalIgnoreCase));
         return probes;
     }
 
