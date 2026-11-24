@@ -7,5 +7,6 @@
   </Folder>
   <Folder Name="/backend/">
     <Project Path="backend/Backend.csproj" />
+    <Project Path="backend.Tests/Backend.Tests.csproj" />
   </Folder>
 </Solution>
