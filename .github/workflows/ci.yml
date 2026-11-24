@@ -1,0 +1,54 @@
+name: CI
+
+# Builds and tests everything on pull requests and on the long-lived branches.
+# (pages.yml only deploys the frontend, and only from master.)
+on:
+  pull_request:
+    branches: [dev, homologa, prod, master]
+  push:
+    branches: [dev, homologa, prod]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# a new push to the same PR/branch cancels the run that is still going
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: Backend (build + tests)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      # builds backend, api-1-vlibras, api-2-speech and backend.Tests
+      - run: dotnet build NasaHackathon.slnx -c Release
+      - run: dotnet test NasaHackathon.slnx -c Release --no-build --logger "trx;LogFileName=test-results.trx"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: "**/TestResults/*.trx"
+          if-no-files-found: ignore
+
+  frontend:
+    name: Frontend (lint + build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build

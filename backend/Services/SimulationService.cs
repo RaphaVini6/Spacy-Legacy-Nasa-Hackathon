@@ -202,8 +202,20 @@ public class SimulationService(DataStore store)
             Score = (int)Math.Round(Math.Clamp(score, 0, 100)),
             EndReason = endReason,
             Metrics = metrics,
-            Events = events.OrderBy(e => e.Day).Take(100).ToList(),
+            Events = CapEvents(events),
             RealHardware = probe.RealHardware,
         };
+    }
+
+    private const int MaxEvents = 100;
+    private static readonly HashSet<string> KeyEventTypes = ["Storm", "End", "Summary"];
+
+    // Long runs can produce hundreds of hibernate/wake-up events. Cut those first so the storms,
+    // the cause of the end and the summary (which happen late) are never lost.
+    private static List<SimulationEvent> CapEvents(List<SimulationEvent> events)
+    {
+        var key = events.Where(e => KeyEventTypes.Contains(e.Type)).Take(MaxEvents).ToList();
+        var others = events.Where(e => !KeyEventTypes.Contains(e.Type)).OrderBy(e => e.Day).Take(MaxEvents - key.Count);
+        return key.Concat(others).OrderBy(e => e.Day).ToList();   // OrderBy is stable
     }
 }
