@@ -26,6 +26,7 @@ Accessibility menu (top right): high contrast, text size, reduce motion and the 
 ```
 frontend/        React 19 + Vite
 backend/         ASP.NET Core 10 API - data, simulation and narration
+backend.Tests/   xUnit tests: simulator rules, real-mission calibration and data checks
 api-1-vlibras/   ASP.NET Core 10 - Portuguese text -> Libras gloss (VLibras)
 api-2-speech/    ASP.NET Core 10 - text-to-speech
 docs/            VLibras swagger
@@ -131,6 +132,18 @@ Real environment variables always win over the `.env` file.
 3. Open a pull request to `dev`. It needs approval from @RaphaVini6 (see `.github/CODEOWNERS`).
 
 Flow: `feature/*` -> `dev` -> `homologa` -> `prod`, and `prod` -> `master`.
+
+### Tests and CI
+
+```bash
+dotnet test                       # backend: simulator + data integrity (about 290 tests, a few seconds)
+cd frontend && npm run lint       # frontend lint
+```
+
+The `CI` workflow (`.github/workflows/ci.yml`) runs on every pull request and on pushes to `dev`, `homologa`
+and `prod`: it builds the three .NET services, runs the tests, then lints and builds the frontend.
+The tests load the real `backend/Data/*.json`, so a missing translation, a broken image reference or a part
+that does not exist fails the build before it reaches production.
 
 ## Hosting
 
